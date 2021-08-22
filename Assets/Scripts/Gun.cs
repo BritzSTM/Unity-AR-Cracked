@@ -16,6 +16,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private VisualEffect _gunEffect;
     [SerializeField] private AudioClip[] _gunSoundEffects;
 
+    [SerializeField] bool _useOld = false;
+    [SerializeField] private ParticleSystem _ps;
+
     private AudioSource _audio;
     private void Awake()
     {
@@ -45,7 +48,11 @@ public class Gun : MonoBehaviour
 
     private void PlayEffects()
     {
-        _gunEffect.Play();
+        if(_useOld)
+            _ps.Play();
+        else
+            _gunEffect.Play();
+
         int pickedSound = Random.Range(0, _gunSoundEffects.Length);
         _audio.PlayOneShot(_gunSoundEffects[pickedSound]);
     }
