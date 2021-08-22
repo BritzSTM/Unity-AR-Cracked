@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 5069021013257974725}
   - component: {fileID: 5069021013257974722}
   - component: {fileID: 5069021013257974723}
-  - component: {fileID: 5069021013257974720}
   m_Layer: 5
   m_Name: R-Button
   m_TagString: Untagged
@@ -223,8 +222,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5069021013257974720}
-        m_TargetAssemblyTypeName: Shoot, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -235,25 +234,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5069021013257974720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5069021013257974334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7195a267860b1343997327c95488a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {r: 0, g: 0, b: 1, a: 1}
-  _damage: 1
-  _cam: {fileID: 0}
-  _smokeEffect:
-    m_AssetGUID: 1b9f4316433b24e92be0a740990a1e4d
-    m_SubObjectName: 
-    m_SubObjectType: 
 --- !u!1 &5069021013278189381
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -341,7 +321,6 @@ GameObject:
   - component: {fileID: 5069021013834473747}
   - component: {fileID: 5069021013834473744}
   - component: {fileID: 5069021013834473745}
-  - component: {fileID: 5069021013834473746}
   m_Layer: 5
   m_Name: L-Button
   m_TagString: Untagged
@@ -450,8 +429,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5069021013834473746}
-        m_TargetAssemblyTypeName: Shoot, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -462,22 +441,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5069021013834473746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5069021013834473743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7195a267860b1343997327c95488a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {r: 1, g: 0, b: 0, a: 1}
-  _damage: 1
-  _cam: {fileID: 0}
-  _smokeEffect:
-    m_AssetGUID: 1b9f4316433b24e92be0a740990a1e4d
-    m_SubObjectName: 
-    m_SubObjectType: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 328054017643186146}
   - component: {fileID: 328054017643186148}
   - component: {fileID: 328054017643186147}
+  - component: {fileID: 30380075684682589}
   m_Layer: 5
   m_Name: WarningAlarmUI
   m_TagString: Untagged
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &30380075684682589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328054017643186145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799853d22ba380b45b09d22e623f9641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveAlarm: 0
+  _alarmBG: {fileID: 328054017643186147}
 --- !u!1 &8759154058818880214
 GameObject:
   m_ObjectHideFlags: 0

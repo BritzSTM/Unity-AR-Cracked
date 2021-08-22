@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1417672958221879690}
   - component: {fileID: 3176863674434731778}
   - component: {fileID: 7633018729293777145}
-  - component: {fileID: 6672486600440030603}
+  - component: {fileID: 3162187989882591499}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2547551449441674330}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -84,19 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6672486600440030603
-BoxCollider:
+--- !u!114 &3162187989882591499
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2547551449441674330}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7195a267860b1343997327c95488a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cam: {fileID: 0}
+  _aimPivot: {fileID: 0}
+  _color: {r: 1, g: 1, b: 1, a: 0}
+  _damage: 1
+  _buttonImg: {fileID: 0}
+  _gunEffect: {fileID: 8044631923208700347}
 --- !u!1 &8044631923208700350
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,13 +127,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8044631923208700350}
-  m_LocalRotation: {x: -0.75596184, y: 0.03501957, z: 0.030248895, w: 0.65297806}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1417672958221879690}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -98.361, y: 0, z: 5.3049927}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!2083052967 &8044631923208700347
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -138,8 +143,8 @@ VisualEffect:
   m_GameObject: {fileID: 8044631923208700350}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: f534d7b635a0e4a48a2f6b126b1e932f, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
