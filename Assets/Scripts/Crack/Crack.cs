@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.AddressableAssets;
 
-public class Spawner : MonoBehaviour
+public class Crack : MonoBehaviour
 {
     [SerializeField] private AssetReference[] _balloons;
     [SerializeField] private Transform[] _spawnPoints;

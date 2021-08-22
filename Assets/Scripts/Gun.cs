@@ -14,12 +14,16 @@ public class Gun : MonoBehaviour
     [SerializeField] private int _damage = 1;
     [SerializeField] private Image _buttonImg;
     [SerializeField] private VisualEffect _gunEffect;
-        
+    [SerializeField] private AudioClip[] _gunSoundEffects;
+
+    private AudioSource _audio;
     private void Awake()
     {
         _buttonImg.color = _color;
         transform.rotation = Quaternion.LookRotation(
             _aimPivot.transform.position - transform.position);
+
+        _audio = GetComponent<AudioSource>();
     }
 
     public void Fire()
@@ -36,8 +40,14 @@ public class Gun : MonoBehaviour
         //        _gunEffect.Play();
         //    }
         //}
+        PlayEffects();
+    }
 
+    private void PlayEffects()
+    {
         _gunEffect.Play();
+        int pickedSound = Random.Range(0, _gunSoundEffects.Length);
+        _audio.PlayOneShot(_gunSoundEffects[pickedSound]);
     }
 
     private void ToDamage(IDamageable target)

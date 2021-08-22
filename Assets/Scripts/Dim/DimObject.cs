@@ -9,7 +9,7 @@ public class DimObject : MonoBehaviour, IDamageable
 
     public Color CurrentColor { get; private set; }
     
-    [SerializeField] Vector3 _velocity;
+    public Vector3 Velocity;
     private Transform _tr;
     private MeshRenderer _meshRenderer;
 
@@ -26,8 +26,8 @@ public class DimObject : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (_velocity.magnitude != 0)
-            _tr.Translate(_velocity * Time.deltaTime);
+        if (Velocity.magnitude != 0)
+            _tr.Translate(Velocity * Time.deltaTime);
     }
 
     private void ChangeColor(Color color)

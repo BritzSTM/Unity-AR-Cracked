@@ -71,6 +71,36 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 2f0bb8de3ac479548b09958715c65f80
+    m_Address: Assets/Prefabs/Crack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6e23753814a475346a879e64a67df89e
+    m_Address: Assets/Sounds/Gun/thunderbolt1.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 14adfeec6765a4748a84b39d9e5d2c35
+    m_Address: Assets/Sounds/Gun/thunderbolt2.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e9e87b2f4d48383458e454e7f0226503
+    m_Address: Assets/Sounds/Gun/thunderbolt3.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 33371004616aed04d9c5817e5fc1842a
+    m_Address: Assets/Sounds/Gun/thunderbolt4.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8c522c3161663454198ef130aed28ecb, type: 2}
   m_SchemaSet:
