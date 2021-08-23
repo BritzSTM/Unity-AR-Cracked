@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cam: {fileID: 0}
   _aimPivot: {fileID: 0}
-  _color: {r: 1, g: 1, b: 1, a: 0}
+  _color: {r: 1, g: 0, b: 0, a: 1}
   _damage: 1
   _buttonImg: {fileID: 0}
   _gunEffect: {fileID: 8044631923208700347}
@@ -109,7 +109,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 14adfeec6765a4748a84b39d9e5d2c35, type: 3}
   - {fileID: 8300000, guid: e9e87b2f4d48383458e454e7f0226503, type: 3}
   - {fileID: 8300000, guid: 33371004616aed04d9c5817e5fc1842a, type: 3}
-  _useOld: 0
+  _useOld: 1
   _ps: {fileID: 8520539495480063430}
 --- !u!82 &4761730446078927415
 AudioSource:
@@ -328,6 +328,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417672958221879690}
     m_Modifications:
+    - target: {fileID: 8576255044335789665, guid: e1ed3149f807c474e8b2afe33316fd08, type: 3}
+      propertyPath: TrailModule.widthOverTrail.scalar
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576255044335789665, guid: e1ed3149f807c474e8b2afe33316fd08, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8576255044335789668, guid: e1ed3149f807c474e8b2afe33316fd08, type: 3}
       propertyPath: m_Name
       value: OldThunderblotPT
@@ -346,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8576255044335789671, guid: e1ed3149f807c474e8b2afe33316fd08, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8576255044335789671, guid: e1ed3149f807c474e8b2afe33316fd08, type: 3}
       propertyPath: m_LocalRotation.w

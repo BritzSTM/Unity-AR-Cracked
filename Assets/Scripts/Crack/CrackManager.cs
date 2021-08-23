@@ -16,11 +16,11 @@ public class CrackManager : MonoBehaviour
     private Camera _arCamera;
     private ARPlaneManager _arPlaneManager;
 
-    [SerializeField] private CrackDeployStrategySO _deployStrategySO;
-    private ICrackDeployStrategy _deployStrategy = null;
+    //[SerializeField] private CrackDeployStrategySO _deployStrategySO;
+    //private ICrackDeployStrategy _deployStrategy = null;
 
 
-
+    [SerializeField] private GameObject _testPrefab;
     [SerializeField] private AssetReference[] _crackPlane;
     [SerializeField] private TMP_Text _text;
 
@@ -50,7 +50,10 @@ public class CrackManager : MonoBehaviour
         if (Time.time < _lastDeployTime + _randDepolyTime)
             return;
 
-        Debug.Log($"[{nameof(CrackManager)}] Try depoly creack");
+        //Debug.Log($"[{nameof(CrackManager)}] Try depoly creack");
+        if (_arPlanesForDeploy.Count == 0)
+            return;
+
         var visibleList = _arPlanesForDeploy.Where(
             (x) => {
                 var screenPos = _arCamera.WorldToScreenPoint(x.transform.position);
@@ -59,19 +62,24 @@ public class CrackManager : MonoBehaviour
                 return (x.GetComponent<Renderer>().isVisible == true) && inScreen;
                 }).ToList();
 
-        Debug.Log($"[{nameof(CrackManager)}] Visiable ar plane : {visibleList.Count}");
+        //Debug.Log($"[{nameof(CrackManager)}] Visiable ar plane : {visibleList.Count}");
         if (visibleList.Count == 0)
             return;
 
-        Debug.Log($"[{nameof(CrackManager)}] Depoly crack");
+        //Debug.Log($"[{nameof(CrackManager)}] Depoly crack");
         int picked = Random.Range(0, visibleList.Count);
         var selectedPlane = visibleList[picked];
 
-        var createdCrack = Addressables.InstantiateAsync(_crackPlane, selectedPlane.center, selectedPlane.transform.rotation);
-        createdCrack.Completed += (x) => {
-            var selectedSize = Random.Range(_minimumCrackSize, _maximumCrackSize);
-            x.Result.transform.localScale = new Vector3(selectedSize, selectedSize, selectedSize);
-        };
+        //var createdCrack = Addressables.InstantiateAsync(_crackPlane, selectedPlane.center, selectedPlane.transform.rotation);
+        var createdCrack = Instantiate(_testPrefab, selectedPlane.center, selectedPlane.transform.rotation);
+        var selectedSize = Random.Range(_minimumCrackSize, _maximumCrackSize);
+        createdCrack.transform.localScale = new Vector3(selectedSize, selectedSize, selectedSize);
+
+        //createdCrack.Completed += (x) => {
+        //    var selectedSize = Random.Range(_minimumCrackSize, _maximumCrackSize);
+        //    x.Result.transform.localScale = new Vector3(selectedSize, selectedSize, selectedSize);
+        //    Debug.Log("Succed deploy");
+        //};
 
         count++;
         _text.text = count.ToString();

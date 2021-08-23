@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 using UnityEngine.AddressableAssets;
 
 public class DimObject : MonoBehaviour, IDamageable
@@ -12,11 +13,12 @@ public class DimObject : MonoBehaviour, IDamageable
     public Vector3 Velocity;
     private Transform _tr;
     private MeshRenderer _meshRenderer;
-
+    private ARCameraManager _camera;
     private void Awake()
     {
         _tr = GetComponent<Transform>();
         _meshRenderer = GetComponent<MeshRenderer>();
+        _camera = FindObjectOfType<ARCameraManager>();
     }
 
     private void Start()
@@ -46,7 +48,8 @@ public class DimObject : MonoBehaviour, IDamageable
     {
         if(type.color == CurrentColor)
         {
-            Addressables.ReleaseInstance(gameObject);
+            //Addressables.ReleaseInstance(gameObject);
+            Destroy(gameObject);
         }
     }
 }

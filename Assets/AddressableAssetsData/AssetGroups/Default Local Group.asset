@@ -47,36 +47,36 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 127833104e117bf459222f40c1116782
-    m_Address: Assets/Prefabs/Cube.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: f80c0f83e83a84144adf687dd02696c6
-    m_Address: Assets/Prefabs/Sphere.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: fd080c91736e5cd43a41106c96a37e27
-    m_Address: Assets/Prefabs/Capsule.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   - m_GUID: bbcee0f096ce6884fbefe792caa03cd8
-    m_Address: Assets/Prefabs/Cylinder.prefab
+    m_Address: Assets/Prefabs/Dim/Cylinder.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 4591035260037843689, guid: bbcee0f096ce6884fbefe792caa03cd8, type: 3}
+    m_TargetAsset: {fileID: 4591035260037843689, guid: bbcee0f096ce6884fbefe792caa03cd8, type: 3}
+  - m_GUID: fd080c91736e5cd43a41106c96a37e27
+    m_Address: Assets/Prefabs/Dim/Capsule.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4252713028821736762, guid: fd080c91736e5cd43a41106c96a37e27, type: 3}
+    m_TargetAsset: {fileID: 4252713028821736762, guid: fd080c91736e5cd43a41106c96a37e27, type: 3}
+  - m_GUID: f80c0f83e83a84144adf687dd02696c6
+    m_Address: Assets/Prefabs/Dim/Sphere.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2423633203635322412, guid: f80c0f83e83a84144adf687dd02696c6, type: 3}
+    m_TargetAsset: {fileID: 2423633203635322412, guid: f80c0f83e83a84144adf687dd02696c6, type: 3}
+  - m_GUID: 127833104e117bf459222f40c1116782
+    m_Address: Assets/Prefabs/Dim/Cube.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 8124900181079579496, guid: 127833104e117bf459222f40c1116782, type: 3}
+    m_TargetAsset: {fileID: 8124900181079579496, guid: 127833104e117bf459222f40c1116782, type: 3}
   - m_GUID: 2f0bb8de3ac479548b09958715c65f80
     m_Address: Assets/Prefabs/Crack.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 2172076061346117155, guid: 2f0bb8de3ac479548b09958715c65f80, type: 3}
+    m_TargetAsset: {fileID: 2172076061346117155, guid: 2f0bb8de3ac479548b09958715c65f80, type: 3}
   - m_GUID: 6e23753814a475346a879e64a67df89e
     m_Address: Assets/Sounds/Gun/thunderbolt1.ogg
     m_ReadOnly: 0
@@ -97,6 +97,54 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 33371004616aed04d9c5817e5fc1842a
     m_Address: Assets/Sounds/Gun/thunderbolt4.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 87b9d806bc828b64890d2feda8455a77
+    m_Address: Assets/Materials/EmissiveLightBlueMat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b83013f060d2abc44bddfea453650d1c
+    m_Address: Assets/Materials/ShootButton.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d86abd8a55f805143bc97e79c28e603f
+    m_Address: Assets/Materials/RedCrackMat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5aba29a90adb5814fb15250690b07fa6
+    m_Address: Assets/Materials/CrossHair.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3c8cf24fe19885e47b05eb958042263c
+    m_Address: ts/Materials/EmissiveLightRedMat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1e57182de13febc44ae0a53f08f63ba7
+    m_Address: Assets/Materials/WhiteCrackMat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0ffaa0b7117ba8c47a9d05ae701d4b4d
+    m_Address: Assets/Materials/Skybox_Mat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: bf784e8351df3894faa428fb4dbe0e00
+    m_Address: Assets/Materials/BlueCrackMat.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

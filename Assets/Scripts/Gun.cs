@@ -31,18 +31,17 @@ public class Gun : MonoBehaviour
 
     public void Fire()
     {
-        //RaycastHit hit;
-        //if(Physics.Raycast(_cam.transform.position, _cam.transform.forward, out hit))
-        //{
-        //    if (hit.transform.tag == "Unit")
-        //    {
-        //        var target = hit.transform.GetComponent<IDamageable>();
-        //        if (target != null)
-        //            ToDamage(target);
+        RaycastHit hit;
+        if (Physics.Raycast(_cam.transform.position, _cam.transform.forward, out hit))
+        {
+            if (hit.transform.tag == "Unit")
+            {
+                var target = hit.transform.GetComponent<IDamageable>();
+                if (target != null)
+                    ToDamage(target);
+            }
+        }
 
-        //        _gunEffect.Play();
-        //    }
-        //}
         PlayEffects();
     }
 
