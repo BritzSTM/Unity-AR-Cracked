@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1255630143710241353}
   - component: {fileID: -7085429644742321674}
   - component: {fileID: 5701694490154899307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ MonoBehaviour:
   _colorMap:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
-  _velocity: {x: 0, y: 0.1, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &5701694490154899307
 MonoBehaviour:
   m_ObjectHideFlags: 0

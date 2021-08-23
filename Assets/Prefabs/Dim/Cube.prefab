@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6196530311229077652}
   - component: {fileID: 5310688595798649201}
   - component: {fileID: 7862321826892132422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   _colorMap:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
-  _velocity: {x: 0, y: 0.1, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &7862321826892132422
 MonoBehaviour:
   m_ObjectHideFlags: 0

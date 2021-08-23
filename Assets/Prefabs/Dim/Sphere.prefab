@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1334093598256867569}
   - component: {fileID: -5287507855112535736}
   - component: {fileID: 8379710538645961181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   _colorMap:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
-  _velocity: {x: 0, y: 0.1, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &8379710538645961181
 MonoBehaviour:
   m_ObjectHideFlags: 0
