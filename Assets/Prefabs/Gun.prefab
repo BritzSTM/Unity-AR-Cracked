@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1417672958221879690}
   - component: {fileID: 3176863674434731778}
   - component: {fileID: 7633018729293777145}
-  - component: {fileID: 3162187989882591499}
   - component: {fileID: 4761730446078927415}
+  - component: {fileID: 3162187989882591499}
   m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
@@ -86,31 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3162187989882591499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2547551449441674330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7195a267860b1343997327c95488a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cam: {fileID: 0}
-  _aimPivot: {fileID: 0}
-  _color: {r: 1, g: 0, b: 0, a: 1}
-  _damage: 1
-  _buttonImg: {fileID: 0}
-  _gunEffect: {fileID: 8044631923208700347}
-  _gunSoundEffects:
-  - {fileID: 8300000, guid: 6e23753814a475346a879e64a67df89e, type: 3}
-  - {fileID: 8300000, guid: 14adfeec6765a4748a84b39d9e5d2c35, type: 3}
-  - {fileID: 8300000, guid: e9e87b2f4d48383458e454e7f0226503, type: 3}
-  - {fileID: 8300000, guid: 33371004616aed04d9c5817e5fc1842a, type: 3}
-  _useOld: 1
-  _ps: {fileID: 8520539495480063430}
 --- !u!82 &4761730446078927415
 AudioSource:
   m_ObjectHideFlags: 0
@@ -207,6 +182,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3162187989882591499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2547551449441674330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7195a267860b1343997327c95488a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cam: {fileID: 0}
+  _aimPivot: {fileID: 0}
+  _color: {r: 1, g: 0, b: 0, a: 1}
+  _damage: 1
+  _buttonImg: {fileID: 0}
+  _gunEffect: {fileID: 8044631923208700347}
+  _gunSoundEffects:
+  - {fileID: 8300000, guid: 6e23753814a475346a879e64a67df89e, type: 3}
+  - {fileID: 8300000, guid: 14adfeec6765a4748a84b39d9e5d2c35, type: 3}
+  - {fileID: 8300000, guid: e9e87b2f4d48383458e454e7f0226503, type: 3}
+  - {fileID: 8300000, guid: 33371004616aed04d9c5817e5fc1842a, type: 3}
+  _useOld: 1
+  _ps: {fileID: 8520539495480063430}
+  _FireTriggerEventSO: {fileID: 0}
 --- !u!1 &8044631923208700350
 GameObject:
   m_ObjectHideFlags: 0

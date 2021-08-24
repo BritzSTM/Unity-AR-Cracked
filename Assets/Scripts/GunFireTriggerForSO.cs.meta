@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 127f09d2a68bef647919d88c0c92e6f6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _leftGunFireSO: {fileID: 11400000, guid: 53d6a4297bcfd7b489c05685d2052c1d, type: 2}
+  - _RightGunFireSO: {fileID: 11400000, guid: bb2c083fa89b3244ebeb70767240fc41, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

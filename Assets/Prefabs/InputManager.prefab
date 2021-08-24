@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &547308576181078196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 547308576181078154}
+  - component: {fileID: 547308576181078197}
+  - component: {fileID: 547308576181078155}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &547308576181078154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547308576181078196}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &547308576181078197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547308576181078196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07da3518b6cdaa74db105624f1a4a55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zoomInEventSO: {fileID: 11400000, guid: 8233e81dfa5e69a4795f7486ab36fd3e, type: 2}
+  _zoomOutEventSO: {fileID: 11400000, guid: 11257eb8be0e8594490c67bbd5681db6, type: 2}
+  CriticalPoint: 115
+--- !u!114 &547308576181078155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547308576181078196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127f09d2a68bef647919d88c0c92e6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftGunFireSO: {fileID: 11400000, guid: 53d6a4297bcfd7b489c05685d2052c1d, type: 2}
+  _RightGunFireSO: {fileID: 11400000, guid: bb2c083fa89b3244ebeb70767240fc41, type: 2}

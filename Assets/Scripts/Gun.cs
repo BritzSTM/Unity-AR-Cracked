@@ -19,6 +19,9 @@ public class Gun : MonoBehaviour
     [SerializeField] bool _useOld = false;
     [SerializeField] private ParticleSystem _ps;
 
+    [Header("EventSO")]
+    [SerializeField] private EventTypeVoid _FireTriggerEventSO;
+
     private AudioSource _audio;
     private void Awake()
     {
@@ -27,6 +30,18 @@ public class Gun : MonoBehaviour
             _aimPivot.transform.position - transform.position);
 
         _audio = GetComponent<AudioSource>();
+    }
+
+    private void OnEnable()
+    {
+        if (_FireTriggerEventSO != null)
+            _FireTriggerEventSO.OnEvent += Fire;
+    }
+
+    private void OnDisable()
+    {
+        if (_FireTriggerEventSO != null)
+            _FireTriggerEventSO.OnEvent -= Fire;
     }
 
     public void Fire()
