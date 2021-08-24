@@ -6,24 +6,15 @@ using UnityEngine.AddressableAssets;
 
 public class Crack : MonoBehaviour
 {
-    [SerializeField] private AssetReference[] _balloons;
-    [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private GameObject _particleSystem;
 
-    void Start()
+    private void Awake()
     {
-        StartCoroutine(StartSpawn());
+
     }
 
-    IEnumerator StartSpawn()
+    private void Start()
     {
-        yield return new WaitForSeconds(4.0f);
-
-        for(int i = 0; i < _balloons.Length; ++i)
-        {
-            var pos = Random.Range(0, 3);
-            Addressables.InstantiateAsync(_balloons[i], _spawnPoints[pos].position, Quaternion.identity);
-        }
-
-        StartCoroutine(StartSpawn());
+        
     }
 }

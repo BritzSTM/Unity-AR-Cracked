@@ -14,6 +14,9 @@ public class DimObject : MonoBehaviour, IDamageable
     private Transform _tr;
     private MeshRenderer _meshRenderer;
     private ARCameraManager _camera;
+    public Camera _some;
+    public EventTypeGameObject So;
+
     private void Awake()
     {
         _tr = GetComponent<Transform>();
@@ -23,6 +26,7 @@ public class DimObject : MonoBehaviour, IDamageable
 
     private void Start()
     {
+        So.RaiseEvent(gameObject);
         ChangeRandomFormColorMap();
     }
 

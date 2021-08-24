@@ -142,6 +142,7 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 4601610287276520061, guid: 9666d73605f633e44928694229b82124, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -787,7 +788,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 1
+  activeInputHandler: 2
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
