@@ -10,6 +10,9 @@ public class Crack : MonoBehaviour
     [SerializeField] private EventTypeGameObject _trackingRequestEventSO;
     [SerializeField] private EventTypeGameObject _untrackingRequestEventSO;
 
+    [Space()]
+    [SerializeField] private GameObject[] _dimObjects;
+
     private void Awake()
     {
         Debug.Assert(_trackingRequestEventSO != null & _untrackingRequestEventSO != null);

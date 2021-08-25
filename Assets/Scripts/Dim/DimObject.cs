@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.AddressableAssets;
 
 public class DimObject : MonoBehaviour, IDamageable
 {
-    [SerializeField] Color[] _colorMap;
-
     public Color CurrentColor { get; private set; }
     
     public Vector3 Velocity;
@@ -15,19 +12,37 @@ public class DimObject : MonoBehaviour, IDamageable
     private MeshRenderer _meshRenderer;
     private ARCameraManager _camera;
     public Camera _some;
-    public EventTypeGameObject So;
+
+    [Header("RaiseEvents")]
+    [SerializeField] private EventTypeGameObject _trackingRequestEventSO;
+
+    [Header("Matrial")]
+    [SerializeField] private Material[] _materials;
+    [SerializeField] private bool _IsPlayDeployAnime = true;
+    [SerializeField] private float _targetDeployAnimeTime = 1.0f;
+
+    private float _playDeployAnimeTime;
+    private float _lastPlayRate;
+    private MaterialPropertyBlock _mpb;
 
     private void Awake()
     {
         _tr = GetComponent<Transform>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _camera = FindObjectOfType<ARCameraManager>();
+        _mpb = new MaterialPropertyBlock();
+    }
+
+    private void OnEnable()
+    {
+        _playDeployAnimeTime = 0.0f;
+        _lastPlayRate = 0.0f;
     }
 
     private void Start()
     {
-        So.RaiseEvent(gameObject);
-        ChangeRandomFormColorMap();
+        _trackingRequestEventSO.RaiseEvent(gameObject);
+        ChangeRandomFormMats();
     }
 
     private void Update()
@@ -36,24 +51,44 @@ public class DimObject : MonoBehaviour, IDamageable
             _tr.Translate(Velocity * Time.deltaTime);
     }
 
-    private void ChangeColor(Color color)
+    private void LateUpdate()
     {
-        _meshRenderer.material.SetColor("_BaseColor", color);
-        CurrentColor = color;
+        AnimeDepoly();
     }
 
-    private void ChangeRandomFormColorMap()
+    private void ChangeColorFromMats(Material mat)
     {
-        var pos = Random.Range(0, _colorMap.Length);
-        ChangeColor(_colorMap[pos]);
+        _meshRenderer.sharedMaterial = mat;
+        CurrentColor = mat.color;
+        Debug.Log(CurrentColor);
+    }
+
+    private void ChangeRandomFormMats()
+    {
+        var pos = Random.Range(0, _materials.Length);
+        ChangeColorFromMats(_materials[pos]);
     }
 
     public void OnDamage(IDamageable.DamageType type)
     {
         if(type.color == CurrentColor)
-        {
-            //Addressables.ReleaseInstance(gameObject);
             Destroy(gameObject);
+    }
+
+    private void AnimeDepoly()
+    {
+        if (!_IsPlayDeployAnime && _lastPlayRate >= 1.0f)
+            return;
+
+        _playDeployAnimeTime += Time.deltaTime;
+
+        _lastPlayRate = _playDeployAnimeTime / _targetDeployAnimeTime;
+        if(_lastPlayRate < 1.0f)
+        {
+            _mpb.SetFloat(Shader.PropertyToID("_DeployRate"), _lastPlayRate);
+            _meshRenderer.SetPropertyBlock(_mpb);
         }
+        else
+            _meshRenderer.SetPropertyBlock(null);
     }
 }

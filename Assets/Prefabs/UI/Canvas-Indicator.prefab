@@ -96,6 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trackingRequestSO: {fileID: 11400000, guid: 718a35b957837e54099d02aad88c2758, type: 2}
   _untrackingRequestSO: {fileID: 11400000, guid: d0cb4e7bd7ecce645ae8f5d8c65f456f, type: 2}
+  _normalModeEventSO: {fileID: 11400000, guid: 49ceb438017334f9a9acbd250932f29f, type: 2}
+  _searchModeEventSO: {fileID: 11400000, guid: 99692bb36e2454da7a71d5509d1b13e6, type: 2}
   _pivotCamera: {fileID: 0}
   _simbolPrefab: {fileID: 1775492546087517278, guid: cac0cd9bde8bd6c448471562bd1a7e0a, type: 3}
   _initPoolSize: 20
