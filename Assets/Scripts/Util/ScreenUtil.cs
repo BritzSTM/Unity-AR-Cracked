@@ -6,12 +6,11 @@ public static class ScreenUtil
     private static Rect _cachedScreenRect = new Rect();
     private static Vector3[] _cachedVectors = new Vector3[32];
 
-    public static void GetScreenSpaceRectFromBounds(this GameObject obj, Camera camera, ref Rect res)
+    public static void GetScreenSpaceRectFromBounds(this Renderer renderer, Camera camera, ref Rect res)
     {
-        var objBounds = obj.GetComponent<Renderer>().bounds;
+        var objBounds = renderer.bounds;
         if (objBounds == null)
         {
-            Debug.LogWarning($"{obj.name} not found bounds from renderer");
             res.x = res.y = 0;
             res.width = res.height = 0;
 
@@ -85,8 +84,19 @@ public static class ScreenUtil
     /// </summary>
     public static bool IsVisibleInScreen(this GameObject obj, Camera camera, ref Rect screenRect)
     {
-        obj.GetScreenSpaceRectFromBounds(camera, ref _cachedRect);
+        var renderer = obj.GetComponent<Renderer>();
 
+        if(renderer == null)
+        {
+            Debug.LogWarning($"{obj.name} not found bounds from renderer");
+            return false;
+        }
+
+        if (!renderer.isVisible)
+            return false;
+        
+        renderer.GetScreenSpaceRectFromBounds(camera, ref _cachedRect);
+        
         if (screenRect != null)
             screenRect = _cachedRect;
 

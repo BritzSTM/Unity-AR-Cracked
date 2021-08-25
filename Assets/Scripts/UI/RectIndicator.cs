@@ -31,21 +31,27 @@ public class RectIndicator : MonoBehaviour
     private void Update()
     {
         // VR 카메라가 계속 이동하므로 항상 갱신하도록 한다.
-        for(int i = 0, pickedIndicator = 0; i < _trackingObjects.Count; ++i)
+        int pickedIndicator = 0;
+        for (int i = 0; i < _trackingObjects.Count; ++i)
         {
             if (!_trackingObjects[i].IsVisibleInScreen(_pivotCamera, ref _cachedRect))
                 continue;
 
             _cachedVector2[0].x = _cachedRect.xMin;
-            _cachedVector2[0].y = _cachedRect.yMin; 
+            _cachedVector2[0].y = _cachedRect.yMin;
 
-            _cachedVector2[1].x = _cachedVector2[1].y = Mathf.Max(_cachedRect.width, _cachedRect.height);
+            _cachedVector2[1].x = _cachedRect.width;
+            _cachedVector2[1].y = _cachedRect.height;
 
             _indicators[pickedIndicator].position = _cachedVector2[0];
             _indicators[pickedIndicator].sizeDelta = _cachedVector2[1];
+            _indicators[pickedIndicator].gameObject.SetActive(true);
             ++pickedIndicator;
+        }
 
-            //_indicators[i].gameObject.SetActive(true);
+        for(int i = pickedIndicator; i < _indicators.Count; ++i)
+        {
+            _indicators[i].gameObject.SetActive(false);
         }
     }
 
@@ -76,7 +82,7 @@ public class RectIndicator : MonoBehaviour
         var simbol = Instantiate(_simbolPrefab, initPos, Quaternion.identity, _tr);
 
         _indicators.Add(simbol.GetComponent<RectTransform>());
-        //simbol.SetActive(false);
+        simbol.SetActive(false);
     }
 
     private void OnTrackingRequest(GameObject obj)
