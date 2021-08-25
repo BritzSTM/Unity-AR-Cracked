@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.XR.ARFoundation;
 
 [RequireComponent(typeof(Volume))]
 public class VisionMode : MonoBehaviour
@@ -23,10 +24,15 @@ public class VisionMode : MonoBehaviour
     [SerializeField] private EventTypeVoid _zoomInEventSO;
     [SerializeField] private EventTypeVoid _zoomOutEventSO;
 
+    [Header("RaiseEvents")]
+    [SerializeField] private EventTypeVoid _normalModeEventSO;
+    [SerializeField] private EventTypeVoid _searchModeEventSO;
+
     public Mode CurrentMode { get; private set; }
 
     private Volume _ppVolume;
     private AudioSource _audioSource;
+    private ARPlaneManager _arPlaneManager;
     
     private void Awake()
     {
@@ -39,6 +45,11 @@ public class VisionMode : MonoBehaviour
         Debug.Assert(_audioSource != null);
 
         Debug.Assert(_zoomInEventSO != null && _zoomOutEventSO != null);
+        Debug.Assert(_normalModeEventSO != null && _searchModeEventSO != null);
+
+        _arPlaneManager = FindObjectOfType<ARPlaneManager>();
+        Debug.Assert(_arPlaneManager != null);
+
         ChangeVision(_initVision);
     }
 
@@ -60,6 +71,8 @@ public class VisionMode : MonoBehaviour
         {
             _ppVolume.profile = _normalModePP;
             _audioSource.Stop();
+            _arPlaneManager.enabled = false;
+            _normalModeEventSO.RaiseEvent();
         }
         else if (mode == Mode.Search)
         {
@@ -69,6 +82,8 @@ public class VisionMode : MonoBehaviour
             _ppVolume.profile = _searchModePP;
             _audioSource.clip = _searchSoundFX;
             _audioSource.Play();
+            _arPlaneManager.enabled = true;
+            _searchModeEventSO.RaiseEvent();
         }
 
         CurrentMode = mode;

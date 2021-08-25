@@ -42,5 +42,5 @@ Material:
     - WaveSpeed: 1
     m_Colors:
     - _Color: {r: 0, g: 0, b: 1, a: 1}
-    - _Emission: {r: 0.41568628, g: 0.5647059, b: 1.2078432, a: 0}
+    - _Emission: {r: 0.5230708, g: 0.87970996, b: 4.5412054, a: 0}
   m_BuildTextureStacks: []

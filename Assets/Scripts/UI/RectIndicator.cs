@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class RectIndicator : MonoBehaviour
 {
+    [Header("ReciveEvents")]
     [SerializeField] private EventTypeGameObject _trackingRequestSO;
     [SerializeField] private EventTypeGameObject _untrackingRequestSO;
+    [SerializeField] private EventTypeVoid _normalModeEventSO;
+    [SerializeField] private EventTypeVoid _searchModeEventSO;
 
+    [Space()]
     [SerializeField] private Camera _pivotCamera;
     [SerializeField] private GameObject _simbolPrefab;
     [SerializeField] private int _initPoolSize = 20;
@@ -14,12 +18,14 @@ public class RectIndicator : MonoBehaviour
     private List<RectTransform> _indicators = new List<RectTransform>();
     private List<GameObject> _trackingObjects = new List<GameObject>();
     private RectTransform _tr;
+    private bool _isSearchMode;
 
     private void Awake()
     {
         Debug.Assert(_trackingRequestSO != null && _untrackingRequestSO != null);
         Debug.Assert(_simbolPrefab != null);
         Debug.Assert(_pivotCamera != null);
+        Debug.Assert(_normalModeEventSO != null && _searchModeEventSO != null);
 
         _tr = GetComponent<RectTransform>();
 
@@ -30,6 +36,9 @@ public class RectIndicator : MonoBehaviour
     private Rect _cachedRect = new Rect();
     private void Update()
     {
+        if (!_isSearchMode)
+            return;
+
         // VR 카메라가 계속 이동하므로 항상 갱신하도록 한다.
         int pickedIndicator = 0;
         for (int i = 0; i < _trackingObjects.Count; ++i)
@@ -59,12 +68,18 @@ public class RectIndicator : MonoBehaviour
     {
         _trackingRequestSO.OnEvent += OnTrackingRequest;
         _untrackingRequestSO.OnEvent += OnUntrackingRequest;
+
+        _normalModeEventSO.OnEvent += OnNormalMode;
+        _searchModeEventSO.OnEvent += OnSearchMode;
     }
 
     private void OnDisable()
     {
         _trackingRequestSO.OnEvent -= OnTrackingRequest;
         _untrackingRequestSO.OnEvent -= OnUntrackingRequest;
+
+        _normalModeEventSO.OnEvent -= OnNormalMode;
+        _searchModeEventSO.OnEvent -= OnSearchMode;
     }
 
     private void CreateIndicatorsInPool(int count)
@@ -105,5 +120,15 @@ public class RectIndicator : MonoBehaviour
 
         if (found != null)
             _trackingObjects.Remove(found);
+    }
+
+    private void OnSearchMode() => _isSearchMode = true;
+    private void OnNormalMode()
+    {
+        _isSearchMode = false;
+        for (int i = 0; i < _indicators.Count; ++i)
+        {
+            _indicators[i].gameObject.SetActive(false);
+        }
     }
 }

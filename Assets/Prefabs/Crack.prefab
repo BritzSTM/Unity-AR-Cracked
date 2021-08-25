@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e10455dadcee7847bb0d46e0fbae23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 4315593312651376637}
+  _trackingRequestEventSO: {fileID: 11400000, guid: 718a35b957837e54099d02aad88c2758, type: 2}
+  _untrackingRequestEventSO: {fileID: 11400000, guid: d0cb4e7bd7ecce645ae8f5d8c65f456f, type: 2}
 --- !u!1 &4315593312651376637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,7 +4882,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3430f57af88d50d45ac6efaf4bd3e6d3, type: 2}
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 7fbb706a5e3ffe44e8b208f02a03d41c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

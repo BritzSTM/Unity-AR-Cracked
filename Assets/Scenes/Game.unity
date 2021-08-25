@@ -320,6 +320,8 @@ MonoBehaviour:
   _searchSoundFX: {fileID: 8300000, guid: 40aae485ca7bc4140a2b491d1b24cb3a, type: 3}
   _zoomInEventSO: {fileID: 11400000, guid: 8233e81dfa5e69a4795f7486ab36fd3e, type: 2}
   _zoomOutEventSO: {fileID: 11400000, guid: 11257eb8be0e8594490c67bbd5681db6, type: 2}
+  _normalModeEventSO: {fileID: 11400000, guid: 49ceb438017334f9a9acbd250932f29f, type: 2}
+  _searchModeEventSO: {fileID: 11400000, guid: 99692bb36e2454da7a71d5509d1b13e6, type: 2}
 --- !u!82 &61799509
 AudioSource:
   m_ObjectHideFlags: 0
@@ -508,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6750551011518780040, guid: 127833104e117bf459222f40c1116782, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.09
+      value: 14.38
       objectReference: {fileID: 0}
     - target: {fileID: 6750551011518780040, guid: 127833104e117bf459222f40c1116782, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1631,7 +1633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e10455dadcee7847bb0d46e0fbae23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 0}
+  _trackingRequestEventSO: {fileID: 0}
+  _untrackingRequestEventSO: {fileID: 0}
 --- !u!1001 &547308578003833898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1792,6 +1795,14 @@ PrefabInstance:
       propertyPath: _pivotCamera
       value: 
       objectReference: {fileID: 61799501}
+    - target: {fileID: 3509652024436996247, guid: ab55f9d5501d35e4dae3ccbae82142c6, type: 3}
+      propertyPath: _normalModeEventSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 49ceb438017334f9a9acbd250932f29f, type: 2}
+    - target: {fileID: 3509652024436996247, guid: ab55f9d5501d35e4dae3ccbae82142c6, type: 3}
+      propertyPath: _searchModeEventSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 99692bb36e2454da7a71d5509d1b13e6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab55f9d5501d35e4dae3ccbae82142c6, type: 3}
 --- !u!1001 &5069021013388130497
