@@ -13,15 +13,10 @@ using TMPro;
 /// </summary>
 public class CrackManager : MonoBehaviour
 {
-    private Camera _arCamera;
+    public Camera _arCamera;
     private ARPlaneManager _arPlaneManager;
 
-    //[SerializeField] private CrackDeployStrategySO _deployStrategySO;
-    //private ICrackDeployStrategy _deployStrategy = null;
-
-
     [SerializeField] private GameObject _testPrefab;
-    [SerializeField] private AssetReference[] _crackPlane;
     [SerializeField] private TMP_Text _text;
 
     // Crack을 배치하기 위한 최소 PlaneSize
@@ -50,7 +45,7 @@ public class CrackManager : MonoBehaviour
         if (Time.time < _lastDeployTime + _randDepolyTime)
             return;
 
-        //Debug.Log($"[{nameof(CrackManager)}] Try depoly creack");
+        Debug.Log($"[{nameof(CrackManager)}] Try depoly creack");
         if (_arPlanesForDeploy.Count == 0)
             return;
 
@@ -62,8 +57,8 @@ public class CrackManager : MonoBehaviour
                 return (x.GetComponent<Renderer>().isVisible == true) && inScreen;
                 }).ToList();
 
-        //Debug.Log($"[{nameof(CrackManager)}] Visiable ar plane : {visibleList.Count}");
-        if (visibleList.Count == 0)
+        Debug.Log($"[{nameof(CrackManager)}] Visiable ar plane : {visibleList.Count}");
+        if (visibleList == null || visibleList.Count == 0)
             return;
 
         //Debug.Log($"[{nameof(CrackManager)}] Depoly crack");
@@ -74,15 +69,7 @@ public class CrackManager : MonoBehaviour
         var createdCrack = Instantiate(_testPrefab, selectedPlane.center, selectedPlane.transform.rotation);
         var selectedSize = Random.Range(_minimumCrackSize, _maximumCrackSize);
         createdCrack.transform.localScale = new Vector3(selectedSize, selectedSize, selectedSize);
-
-        //createdCrack.Completed += (x) => {
-        //    var selectedSize = Random.Range(_minimumCrackSize, _maximumCrackSize);
-        //    x.Result.transform.localScale = new Vector3(selectedSize, selectedSize, selectedSize);
-        //    Debug.Log("Succed deploy");
-        //};
-
-        count++;
-        _text.text = count.ToString();
+        _arPlanesForDeploy.Remove(selectedPlane);
 
         _lastDeployTime = Time.time;
         _randDepolyTime = Random.Range(_minimumDeployTime, _maximumDeployTime);

@@ -15,6 +15,7 @@ public class DimObject : MonoBehaviour, IDamageable
 
     [Header("RaiseEvents")]
     [SerializeField] private EventTypeGameObject _trackingRequestEventSO;
+    [SerializeField] private EventTypeGameObject _untrackingRequestEventSO;
     [SerializeField] private EventTypeDim _OnSpawnDimEventSO;
     [SerializeField] private EventTypeDim _OnDestroyDimEventSO;
 
@@ -45,6 +46,7 @@ public class DimObject : MonoBehaviour, IDamageable
 
     private void OnDisable()
     {
+        _untrackingRequestEventSO.RaiseEvent(gameObject);
         _OnDestroyDimEventSO.RaiseEvent(this);
     }
 
