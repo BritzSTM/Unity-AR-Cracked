@@ -3,7 +3,11 @@ guid: 95100b626062ee4409c930c21e7d516f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _some: {instanceID: 0}
+  - _trackingRequestEventSO: {fileID: 11400000, guid: 718a35b957837e54099d02aad88c2758, type: 2}
+  - _OnSpawnDimEventSO: {fileID: 11400000, guid: ff51324de326d4779b028024c8fba44e, type: 2}
+  - _OnDestroyDimEventSO: {fileID: 11400000, guid: 6795acb7c92fe413fbf67cf8a18b6b20, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

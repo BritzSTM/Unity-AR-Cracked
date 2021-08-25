@@ -15,6 +15,8 @@ public class DimObject : MonoBehaviour, IDamageable
 
     [Header("RaiseEvents")]
     [SerializeField] private EventTypeGameObject _trackingRequestEventSO;
+    [SerializeField] private EventTypeDim _OnSpawnDimEventSO;
+    [SerializeField] private EventTypeDim _OnDestroyDimEventSO;
 
     [Header("Matrial")]
     [SerializeField] private Material[] _materials;
@@ -37,6 +39,13 @@ public class DimObject : MonoBehaviour, IDamageable
     {
         _playDeployAnimeTime = 0.0f;
         _lastPlayRate = 0.0f;
+
+        _OnSpawnDimEventSO.RaiseEvent(this);
+    }
+
+    private void OnDisable()
+    {
+        _OnDestroyDimEventSO.RaiseEvent(this);
     }
 
     private void Start()
@@ -60,7 +69,6 @@ public class DimObject : MonoBehaviour, IDamageable
     {
         _meshRenderer.sharedMaterial = mat;
         CurrentColor = mat.color;
-        Debug.Log(CurrentColor);
     }
 
     private void ChangeRandomFormMats()

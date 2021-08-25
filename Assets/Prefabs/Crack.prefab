@@ -113,6 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trackingRequestEventSO: {fileID: 11400000, guid: 718a35b957837e54099d02aad88c2758, type: 2}
   _untrackingRequestEventSO: {fileID: 11400000, guid: d0cb4e7bd7ecce645ae8f5d8c65f456f, type: 2}
+  _dimObjects:
+  - {fileID: 8124900181079579496, guid: 127833104e117bf459222f40c1116782, type: 3}
 --- !u!1 &4315593312651376637
 GameObject:
   m_ObjectHideFlags: 0

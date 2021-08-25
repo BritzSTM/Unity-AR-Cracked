@@ -10,8 +10,12 @@ public class Crack : MonoBehaviour
     [SerializeField] private EventTypeGameObject _trackingRequestEventSO;
     [SerializeField] private EventTypeGameObject _untrackingRequestEventSO;
 
-    [Space()]
+    [Header("Spawn desc")]
     [SerializeField] private GameObject[] _dimObjects;
+    public float MinSpawnTime;
+    public float MaxSpawnTime;
+    private float pickedSpawnTime;
+    private float _lastSpawnTime;
 
     private void Awake()
     {
@@ -26,5 +30,10 @@ public class Crack : MonoBehaviour
     private void OnDisable()
     {
         _untrackingRequestEventSO.RaiseEvent(gameObject);
+    }
+
+    private void Update()
+    {
+
     }
 }
