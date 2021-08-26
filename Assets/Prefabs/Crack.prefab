@@ -113,6 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trackingRequestEventSO: {fileID: 11400000, guid: 718a35b957837e54099d02aad88c2758, type: 2}
   _untrackingRequestEventSO: {fileID: 11400000, guid: d0cb4e7bd7ecce645ae8f5d8c65f456f, type: 2}
+  _OnBurstEventSO: {fileID: 0}
+  _OnUnburstEventSO: {fileID: 0}
   _dimObjects:
   - {fileID: 4252713028821736762, guid: fd080c91736e5cd43a41106c96a37e27, type: 3}
   - {fileID: 8124900181079579496, guid: 127833104e117bf459222f40c1116782, type: 3}
@@ -133,9 +135,12 @@ MonoBehaviour:
   - {fileID: 1944632367240649368, guid: 9d4fddbed297e4ee393c939a195da30c, type: 3}
   - {fileID: 7085612134581990034, guid: 29621ca061df3419791575cab51ffdd3, type: 3}
   - {fileID: 3752362217107650037, guid: c9934510ef0734c03b2083c74ec34675, type: 3}
-  MinSpawnTime: 3.5
-  MaxSpawnTime: 7
-  EmissionForce: 50
+  MinSpawnTime: 1.5
+  MaxSpawnTime: 5
+  EmissionForce: 10
+  MinBurstTime: 4.5
+  MaxBurstTime: 7
+  BurstEmissionForce: 4
 --- !u!1 &4315593312651376637
 GameObject:
   m_ObjectHideFlags: 0

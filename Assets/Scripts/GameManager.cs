@@ -17,8 +17,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _currentDimText;
     [SerializeField] private WarningAlarm _limitDimAlarm;
 
+    [SerializeField] private GameObject[] _EscapeStateDisalbe;
+    [SerializeField] private GameObject _EscapeUI;
+
+
     [Header("GameRule")]
-    public int LimitDimCount = 16;
+    public int LimitDimCount = 5;
     public float LimitDimWarningRate = 0.8f;
 
     public static GameManager Instance = null;
@@ -45,15 +49,26 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // warning...
-        float currentDimRate = _currentDimCount / LimitDimCount;
+        float currentDimRate = (float)_currentDimCount / (float)LimitDimCount;
+        Debug.Log($"current warning rate : {currentDimRate}");
+
         if (currentDimRate >= 1.0f)
         {
-            // GameOver
-        }
+            _EscapeUI.SetActive(true);
 
-        if(currentDimRate >= 0.8f)
+            for(int i = 0; i< _EscapeStateDisalbe.Length; ++i)
+            {
+                _EscapeStateDisalbe[i].SetActive(false);
+            }
+        }
+        
+
+        if (currentDimRate >= LimitDimWarningRate)
         {
-            _limitDimAlarm.ActiveAlarm = true;
+            Debug.Log("Active warning");
+
+            if(!_limitDimAlarm.ActiveAlarm)
+                _limitDimAlarm.ActiveAlarm = true;
         }
         else
         {

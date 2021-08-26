@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 6249031108426297352}
   - component: {fileID: 6249031108426297353}
   m_Layer: 5
-  m_Name: ScoreText(TMP)
+  m_Name: MinedText(TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,8 +167,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Mined : 00000000'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c40553cecb254404d9888a3de2c905e7, type: 2}
+  m_sharedMaterial: {fileID: 9023746672754994180, guid: c40553cecb254404d9888a3de2c905e7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -378,10 +378,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time : 00 : 00 : 00'
+  m_text: 'TIME : 00 : 00 : 00'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c40553cecb254404d9888a3de2c905e7, type: 2}
+  m_sharedMaterial: {fileID: 9023746672754994180, guid: c40553cecb254404d9888a3de2c905e7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 6249031109508581102}
   - component: {fileID: 6249031109508581103}
   m_Layer: 5
-  m_Name: DimText(TMP)
+  m_Name: CountText(TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -525,12 +525,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'DimCount : 000
+  m_text: 'Count : 0000
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c40553cecb254404d9888a3de2c905e7, type: 2}
+  m_sharedMaterial: {fileID: 9023746672754994180, guid: c40553cecb254404d9888a3de2c905e7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

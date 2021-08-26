@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4790777, g: 0.4757228, b: 0.39054266, a: 1}
+  m_IndirectSpecularColor: {r: 0.47907627, g: 0.47572154, b: 0.3905405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -418,6 +418,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &164406868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5258562800135692258, guid: 6cee4c9d114e8004e90011e665d8e775, type: 3}
+  m_PrefabInstance: {fileID: 5258562798301242584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &167636669
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +706,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8022573756666517330, guid: 3ff4ee60e60094bf7850428d3dc79f19, type: 3}
   m_PrefabInstance: {fileID: 8022573756857944152}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &470723317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2066585003903660979, guid: ab55f9d5501d35e4dae3ccbae82142c6, type: 3}
+  m_PrefabInstance: {fileID: 2066585003906013560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &527501739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3938553033738579535, guid: 3e5e2e8f283b54d15bf0587a27d33a57, type: 3}
@@ -845,6 +855,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7274008501011161381, guid: 67781e8fb2e094875a0493fd37a18d68, type: 3}
   m_PrefabInstance: {fileID: 7274008500333757267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &700047398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 477097901178408648, guid: 7603e4db09e04a544b32d4b254ab187b, type: 3}
+  m_PrefabInstance: {fileID: 7952834084843793653}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &713120233 stripped
 MonoBehaviour:
@@ -1026,7 +1041,13 @@ MonoBehaviour:
   _minedDimText: {fileID: 1981441307}
   _currentDimText: {fileID: 1588255680}
   _limitDimAlarm: {fileID: 1302471304}
-  LimitDimCount: 8
+  _EscapeStateDisalbe:
+  - {fileID: 245490642}
+  - {fileID: 1729088830}
+  - {fileID: 164406868}
+  - {fileID: 470723317}
+  _EscapeUI: {fileID: 700047398}
+  LimitDimCount: 5
   LimitDimWarningRate: 0.8
 --- !u!4 &746053120
 Transform:
@@ -1609,8 +1630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 0}
-  m_DetectionMode: 2
+  m_PlanePrefab: {fileID: 5112218244640375860, guid: b71945608b1a7464e847a7fb5e712878, type: 3}
+  m_DetectionMode: 2147483647
 --- !u!1 &1729088830 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6249031107893528893, guid: 40b8c530d8151004ca72cc9fbcec6d8a, type: 3}

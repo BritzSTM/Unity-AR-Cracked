@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20749268, g: 0.21147677, b: 0.14576986, a: 1}
+  m_IndirectSpecularColor: {r: 0.47907627, g: 0.47572154, b: 0.3905405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -609,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7936908786290066707, guid: 108b1d119c0ecf741a4c29e94f5aa9ca, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7936908786290066711, guid: 108b1d119c0ecf741a4c29e94f5aa9ca, type: 3}
       propertyPath: m_Pivot.x
@@ -697,8 +697,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7936908786594684653, guid: 108b1d119c0ecf741a4c29e94f5aa9ca, type: 3}
       propertyPath: m_text
-      value: " This software allows you to find hazardous substances from other dimensions.\n
-        Are you willing to accept any problems that arise using this software?"
+      value: ' This software allows you to find hazardous substances from other dimensions.
+
+        Are
+        you willing to accept any problems that arise using this software?'
       objectReference: {fileID: 0}
     - target: {fileID: 7936908786912838536, guid: 108b1d119c0ecf741a4c29e94f5aa9ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -780,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016402695742062633, guid: 470094abeff1ad744af80ffafe3aeea3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9016402695742063061, guid: 470094abeff1ad744af80ffafe3aeea3, type: 3}
       propertyPath: m_Pivot.x

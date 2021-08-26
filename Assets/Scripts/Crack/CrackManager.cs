@@ -13,7 +13,7 @@ using TMPro;
 /// </summary>
 public class CrackManager : MonoBehaviour
 {
-    public Camera _arCamera;
+    private Camera _arCamera;
     private ARPlaneManager _arPlaneManager;
 
     [SerializeField] private GameObject _testPrefab;
