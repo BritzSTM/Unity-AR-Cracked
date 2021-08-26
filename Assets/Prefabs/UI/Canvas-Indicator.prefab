@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2066585003903660982}
   - component: {fileID: 2066585003903660981}
   - component: {fileID: 3509652024436996247}
+  - component: {fileID: 663785487693753592}
   m_Layer: 5
   m_Name: Canvas-Indicator
   m_TagString: Untagged
@@ -101,3 +102,18 @@ MonoBehaviour:
   _pivotCamera: {fileID: 0}
   _simbolPrefab: {fileID: 1775492546087517278, guid: cac0cd9bde8bd6c448471562bd1a7e0a, type: 3}
   _initPoolSize: 20
+--- !u!114 &663785487693753592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066585003903660979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc38ee375aa92a945b51e3218737a548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventSO: {fileID: 11400000, guid: 21bcc052dd6d0f844ac175ddac3f26b2, type: 2}
+  targets:
+  - {fileID: 2066585003903660979}

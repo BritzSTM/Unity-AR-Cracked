@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4301469067162810158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012850112650609295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39449b981b79f5f43b1301403cf83c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningRate: 0.7
+  _onUpdateDimCountSO: {fileID: 11400000, guid: 19040e061a04685448668fa64e4ae9be, type: 2}
 --- !u!1 &5258562799798823718
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +104,7 @@ GameObject:
   - component: {fileID: 5258562800135692261}
   - component: {fileID: 5258562800135692260}
   - component: {fileID: 5258562800135692259}
+  - component: {fileID: 1197151502829166038}
   m_Layer: 5
   m_Name: Canvas-Warning
   m_TagString: Untagged
@@ -178,6 +193,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1197151502829166038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258562800135692258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc38ee375aa92a945b51e3218737a548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventSO: {fileID: 11400000, guid: 21bcc052dd6d0f844ac175ddac3f26b2, type: 2}
+  targets:
+  - {fileID: 5258562799798823718}
 --- !u!1001 &2261493002338174318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,7 +217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 328054017643186145, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
       propertyPath: m_Name
-      value: DimAlarm
+      value: CountAlarm
       objectReference: {fileID: 0}
     - target: {fileID: 328054017643186146, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
       propertyPath: m_Pivot.x
@@ -275,10 +305,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
       propertyPath: m_text
-      value: Dim Warning
+      value: COUNT WARNING
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
+--- !u!1 &2012850112650609295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 328054017643186145, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
+  m_PrefabInstance: {fileID: 2261493002338174318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2012850112650609292 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 328054017643186146, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
@@ -381,7 +424,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
       propertyPath: m_text
-      value: Search Warning
+      value: SEARCH WARNING
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
@@ -399,7 +450,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 328054017643186145, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
       propertyPath: m_Name
-      value: CrackAlarm
+      value: BurstAlarm
       objectReference: {fileID: 0}
     - target: {fileID: 328054017643186146, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
       propertyPath: m_Pivot.x
@@ -487,7 +538,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
       propertyPath: m_text
-      value: Crack Warning
+      value: BURST WARNING
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971237080339385036, guid: 74869117eb352d149a233b88cd1d859a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74869117eb352d149a233b88cd1d859a, type: 3}

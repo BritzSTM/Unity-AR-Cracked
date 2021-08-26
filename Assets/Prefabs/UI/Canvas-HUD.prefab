@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5069021012872450133}
   - component: {fileID: 5069021012872450130}
   - component: {fileID: 5069021012872450131}
+  - component: {fileID: 7375039641084735020}
+  - component: {fileID: 245490647}
   m_Layer: 5
   m_Name: Canvas-HUD
   m_TagString: Untagged
@@ -102,6 +104,42 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7375039641084735020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069021012872450128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc38ee375aa92a945b51e3218737a548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventSO: {fileID: 11400000, guid: 21bcc052dd6d0f844ac175ddac3f26b2, type: 2}
+  _targetState: 0
+  targets:
+  - {fileID: 5069021013834473743}
+  - {fileID: 5069021013257974334}
+  - {fileID: 5069021013278189381}
+--- !u!114 &245490647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069021012872450128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eac148f864654a4cb1e64d194d7e7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnNormalModeEventSO: {fileID: 11400000, guid: 49ceb438017334f9a9acbd250932f29f, type: 2}
+  _OnSearchModeEventSO: {fileID: 11400000, guid: 99692bb36e2454da7a71d5509d1b13e6, type: 2}
+  _targets:
+  - {fileID: 5069021013834473743}
+  - {fileID: 5069021013257974334}
+  - {fileID: 5069021013278189381}
 --- !u!1 &5069021013257974334
 GameObject:
   m_ObjectHideFlags: 0

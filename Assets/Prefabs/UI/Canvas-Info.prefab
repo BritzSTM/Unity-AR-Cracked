@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6249031107893528890}
   - component: {fileID: 6249031107893528891}
   - component: {fileID: 6249031107893528892}
+  - component: {fileID: 1729088835}
   m_Layer: 5
   m_Name: Canvas-Info
   m_TagString: Untagged
@@ -100,6 +101,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1729088835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6249031107893528893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e819a949bd26745a99e1b86014b89c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6249031108426297355
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +124,7 @@ GameObject:
   - component: {fileID: 6249031108426297354}
   - component: {fileID: 6249031108426297352}
   - component: {fileID: 6249031108426297353}
+  - component: {fileID: 8804854890436900685}
   m_Layer: 5
   m_Name: MinedText(TMP)
   m_TagString: Untagged
@@ -165,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mined : 00000000'
+  m_text: 'MINED : 00000000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c40553cecb254404d9888a3de2c905e7, type: 2}
   m_sharedMaterial: {fileID: 9023746672754994180, guid: c40553cecb254404d9888a3de2c905e7, type: 2}
@@ -234,6 +248,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8804854890436900685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6249031108426297355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dab2d3050538a0438d65cea4ec74249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onGameManagerUpdateSO: {fileID: 11400000, guid: ee5f2fb2a6e97ba449c4df7fc3745250, type: 2}
+  _prefixStr: 'MINED : '
 --- !u!1 &6249031108624134692
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +499,7 @@ GameObject:
   - component: {fileID: 6249031109508581008}
   - component: {fileID: 6249031109508581102}
   - component: {fileID: 6249031109508581103}
+  - component: {fileID: 882318238}
   m_Layer: 5
   m_Name: CountText(TMP)
   m_TagString: Untagged
@@ -525,7 +554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Count : 0000
+  m_text: 'COUNT : 0000
 
 '
   m_isRightToLeft: 0
@@ -596,3 +625,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &882318238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6249031109508581009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eaf08bfc6fad0444a8fa09dba6c64f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onGameManagerUpdateSO: {fileID: 11400000, guid: 19040e061a04685448668fa64e4ae9be, type: 2}
+  _prefixStr: 'COUNT : '

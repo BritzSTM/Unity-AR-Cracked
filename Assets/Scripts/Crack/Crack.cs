@@ -12,6 +12,10 @@ public class Crack : MonoBehaviour
     [SerializeField] private EventTypeCrack _OnBurstEventSO;
     [SerializeField] private EventTypeCrack _OnUnburstEventSO;
 
+    [Header("Deciders")]
+    [SerializeField] private CrackEmissionDeciderSO[] DeciderSOs;
+    private ICrackEmissionDecider[] _deciders;
+
     [Header("Spawn desc")]
     [SerializeField] private GameObject[] _dimObjects;
     public float MinSpawnTime = 4.5f;
@@ -23,6 +27,7 @@ public class Crack : MonoBehaviour
     private Transform _tr;
 
     [Header("burst desc")]
+    [Range(0.0f, 1.0f)] public float BurstablePT = 0.35f;
     public float MinBurstTime = 4.5f;
     public float MaxBurstTime = 7.0f;
     public float BurstEmissionForce = 4.0f;

@@ -5,21 +5,24 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private bool _autoStart = false;
+
     [Header("Recive events")]
     [SerializeField] private EventTypeDim _onSpawnDimEventSO;
     [SerializeField] private EventTypeDim _onDestroyDimEventSO;
 
-    private int _minedDimCount;
-    private int _currentDimCount;
+    [Header("Raise events")]
+    [SerializeField] private EventTypeGameManager _onUpdateDimCountEventSO;
+    [SerializeField] private EventTypeGameManager _onUpdateMinedCountEventSO;
+    [SerializeField] private EventTypeGameManager _onUpdateTimeEventSO;
+    [SerializeField] private EventTypeGameManager _onGameoverEventSO;   
 
-    [Header("UI... Remove it")]
-    [SerializeField] private TMP_Text _minedDimText;
-    [SerializeField] private TMP_Text _currentDimText;
-    [SerializeField] private WarningAlarm _limitDimAlarm;
+    public int MinedDimCount { get; private set; }
+    public int CurrentDimCount { get; private set; }
 
-    [SerializeField] private GameObject[] _EscapeStateDisalbe;
-    [SerializeField] private GameObject _EscapeUI;
-
+    public float PlayTime { get; private set; }
+    private float _startPlayTime;
+    private bool _isPlay;
 
     [Header("GameRule")]
     public int LimitDimCount = 5;
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+
         else
             Destroy(this);
     }
@@ -46,53 +50,56 @@ public class GameManager : MonoBehaviour
         _onDestroyDimEventSO.OnEvent -= OnDestroyDimEvent;
     }
 
-    private void Update()
+    private void Start()
     {
-        // warning...
-        float currentDimRate = (float)_currentDimCount / (float)LimitDimCount;
-        Debug.Log($"current warning rate : {currentDimRate}");
-
-        if (currentDimRate >= 1.0f)
-        {
-            _EscapeUI.SetActive(true);
-
-            for(int i = 0; i< _EscapeStateDisalbe.Length; ++i)
-            {
-                _EscapeStateDisalbe[i].SetActive(false);
-            }
-        }
-        
-
-        if (currentDimRate >= LimitDimWarningRate)
-        {
-            Debug.Log("Active warning");
-
-            if(!_limitDimAlarm.ActiveAlarm)
-                _limitDimAlarm.ActiveAlarm = true;
-        }
-        else
-        {
-            _limitDimAlarm.ActiveAlarm = false;
-        }
+        if (_autoStart)
+            Play();
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        // Mined
-        _minedDimText.text = string.Format("Mined : {0:D8}", _minedDimCount);
+        if (!_isPlay)
+            return;
 
-        // DimCount
-        _currentDimText.text = string.Format("DimCount : {0:D8}", _currentDimCount);
+        UpdatePlayTime();
+    }
+
+    private void Update()
+    {
+        if (!_isPlay)
+            return;
+
+        if (CurrentDimCount > LimitDimCount)
+        {
+            _isPlay = false;
+            _onGameoverEventSO.RaiseEvent(this);
+        }
     }
 
     private void OnSpawnDimEvent(DimObject dim)
     {
-        ++_currentDimCount;
+        ++CurrentDimCount;
+        _onUpdateDimCountEventSO.RaiseEvent(this);
     }
 
     private void OnDestroyDimEvent(DimObject dim)
     {
-        --_currentDimCount;
-        ++_minedDimCount;
+        --CurrentDimCount;
+        ++MinedDimCount;
+
+        _onUpdateDimCountEventSO.RaiseEvent(this);
+        _onUpdateMinedCountEventSO.RaiseEvent(this);
+    }
+
+    public void Play()
+    {
+        _isPlay = true;
+        _startPlayTime = Time.time;
+    }
+
+    private void UpdatePlayTime()
+    {
+        PlayTime += Time.time - _startPlayTime;
+        _onUpdateTimeEventSO.RaiseEvent(this);
     }
 }
