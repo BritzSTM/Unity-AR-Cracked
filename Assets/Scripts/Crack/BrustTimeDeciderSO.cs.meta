@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1d7736247c743ae4f8e80e65b02da2da
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OnBrustTimeEventSO: {fileID: 11400000, guid: 07fdeb33d88135a419d1bb40bdabd191, type: 2}
+  - OnUnbrustTimeEventSO: {fileID: 11400000, guid: a1a1fea9cd68faa48afc653298cb56e2, type: 2}
+  - EmissionTimeSO: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

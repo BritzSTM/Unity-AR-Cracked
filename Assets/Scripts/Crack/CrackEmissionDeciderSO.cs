@@ -1,21 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public interface ICrackEmissionDecider
 {
-    void Build(Crack crack);
+    void Build(CrackEmissionDeciderSO originSO, Crack crack);
 
     bool Decide();
+    void UpdateState();
 }
 
-public abstract class CrackEmissionDeciderSO : MonoBehaviour
+public abstract class CrackEmissionDeciderSO : ScriptableObject
 {
     public abstract ICrackEmissionDecider Create();
 }
 
-public class CrackEmissionDeciderSO<T> : MonoBehaviour
+public class CrackEmissionDeciderSO<T> : CrackEmissionDeciderSO
     where T : ICrackEmissionDecider, new() 
 {
-    public ICrackEmissionDecider Create() => new T();
+    public override ICrackEmissionDecider Create() => new T();
 }

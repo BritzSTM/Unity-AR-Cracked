@@ -1,38 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.AddressableAssets;
 
 public class Crack : MonoBehaviour
 {
     [Header("RaiseEvents")]
     [SerializeField] private EventTypeGameObject _trackingRequestEventSO;
     [SerializeField] private EventTypeGameObject _untrackingRequestEventSO;
-    [SerializeField] private EventTypeCrack _OnBurstEventSO;
-    [SerializeField] private EventTypeCrack _OnUnburstEventSO;
 
     [Header("Deciders")]
-    [SerializeField] private CrackEmissionDeciderSO[] DeciderSOs;
+    [SerializeField] private CrackEmissionDeciderSO[] _deciderSOs;
     private ICrackEmissionDecider[] _deciders;
 
     [Header("Spawn desc")]
     [SerializeField] private GameObject[] _dimObjects;
-    public float MinSpawnTime = 4.5f;
-    public float MaxSpawnTime = 7.0f;
+
+
+    public bool WasEmissionPrevFrame { get; private set; }
+    public float CreationTime { get; private set; }
+    public float LastEmissionTime { get; private set; }
     public float EmissionForce = 4.0f;
 
-    private float _pickedSpawnTime;
-    private float _lastSpawnTime;
     private Transform _tr;
-
-    [Header("burst desc")]
-    [Range(0.0f, 1.0f)] public float BurstablePT = 0.35f;
-    public float MinBurstTime = 4.5f;
-    public float MaxBurstTime = 7.0f;
-    public float BurstEmissionForce = 4.0f;
-    private float _pickednBurstTime;
-    private float _lastnBurstTime;
+    private Vector3[] _cahcedVector3 = new Vector3[8];
 
     private void Awake()
     {
@@ -45,17 +33,44 @@ public class Crack : MonoBehaviour
         _trackingRequestEventSO.RaiseEvent(gameObject);
     }
 
+    private void Start()
+    {
+        CreationTime = Time.time;
+        InitDeciders();
+    }
+
     private void OnDisable()
     {
         _untrackingRequestEventSO.RaiseEvent(gameObject);
     }
 
-    private Vector3[] _cahcedVector3 = new Vector3[8];
     private void Update()
     {
-        if (!IsSpawanableTime())
-            return;
+        UpdateDeciders();
 
+        if(!DecideEmission())
+        {
+            WasEmissionPrevFrame = false;
+            return;
+        }
+
+        EmitDim();
+        WasEmissionPrevFrame = true;
+        LastEmissionTime = Time.time;
+    }
+
+    private void InitDeciders()
+    {
+        _deciders = new ICrackEmissionDecider[_deciderSOs.Length];
+        for(int i = 0; i < _deciderSOs.Length; ++i)
+        {
+            _deciders[i] = _deciderSOs[i].Create();
+            _deciders[i].Build(_deciderSOs[i], this);
+        }
+    }
+
+    private void EmitDim()
+    {
         int pickedDIm = Random.Range(0, _dimObjects.Length);
         var createdDim = Instantiate(_dimObjects[pickedDIm], _tr.position, Quaternion.identity);
         var rbody = createdDim.GetComponent<Rigidbody>();
@@ -71,10 +86,28 @@ public class Crack : MonoBehaviour
         _tr.rotation = Quaternion.LookRotation(_cahcedVector3[0]);
         rbody.AddForce(_tr.forward * EmissionForce);
         _tr.rotation = prevRot;
-
-        _lastSpawnTime = Time.time;
-        _pickedSpawnTime = Random.Range(MinSpawnTime, MaxSpawnTime);
     }
 
-    private bool IsSpawanableTime() => Time.time > _lastSpawnTime + _pickedSpawnTime;
+    private void UpdateDeciders()
+    {
+        for(int i = 0; i < _deciders.Length; ++i)
+        {
+            _deciders[i].UpdateState();
+        }
+    }
+
+    private bool DecideEmission()
+    {
+        bool b = false;
+        for(int i = 0; i < _deciders.Length; ++i)
+        {
+            if(_deciders[i].Decide())
+            {
+                b = true;
+                break;
+            }
+        }
+
+        return b;
+    }
 }

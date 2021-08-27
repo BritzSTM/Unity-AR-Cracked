@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7736247c743ae4f8e80e65b02da2da, type: 3}
+  m_Name: NormalBrustTime
+  m_EditorClassIdentifier: 
+  OnBrustTimeEventSO: {fileID: 11400000, guid: 07fdeb33d88135a419d1bb40bdabd191, type: 2}
+  OnUnbrustTimeEventSO: {fileID: 11400000, guid: a1a1fea9cd68faa48afc653298cb56e2, type: 2}
+  MinBurstTime: 1
+  MaxBurstTime: 10
+  BurstDurationTime: 20
+  EmissionTimeSO: {fileID: 11400000, guid: a7224e006922a764f8cadbb7b0993417, type: 2}
