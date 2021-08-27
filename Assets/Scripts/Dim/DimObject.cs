@@ -6,12 +6,9 @@ using UnityEngine.XR.ARFoundation;
 public class DimObject : MonoBehaviour, IDamageable
 {
     public Color CurrentColor { get; private set; }
-    
-    public Vector3 Velocity;
     private Transform _tr;
     private MeshRenderer _meshRenderer;
     private ARCameraManager _camera;
-    public Camera _some;
 
     [Header("RaiseEvents")]
     [SerializeField] private EventTypeGameObject _trackingRequestEventSO;
@@ -54,12 +51,6 @@ public class DimObject : MonoBehaviour, IDamageable
     {
         _trackingRequestEventSO.RaiseEvent(gameObject);
         ChangeRandomFormMats();
-    }
-
-    private void Update()
-    {
-        if (Velocity.magnitude != 0)
-            _tr.Translate(Velocity * Time.deltaTime);
     }
 
     private void LateUpdate()
