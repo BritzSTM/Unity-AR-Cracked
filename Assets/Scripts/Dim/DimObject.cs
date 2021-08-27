@@ -72,6 +72,9 @@ public class DimObject : MonoBehaviour, IDamageable
 
     public void OnDamage(IDamageable.DamageType type)
     {
+        if (_lastPlayRate < 1.0f)
+            return;
+
         if(type.color == CurrentColor)
             Destroy(gameObject);
     }

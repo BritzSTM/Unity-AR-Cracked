@@ -16,8 +16,9 @@ public class CrackManager : MonoBehaviour
     private Camera _arCamera;
     private ARPlaneManager _arPlaneManager;
 
-    [SerializeField] private GameObject _testPrefab;
-    [SerializeField] private TMP_Text _text;
+    
+
+    [SerializeField] private GameObject[] _crackPrefabs;
 
     // Crack을 배치하기 위한 최소 PlaneSize
     [SerializeField] private Vector2 _minimumPlaneSizeForDeploy = (Vector2.one / 10.0f); // 0.1 * 0.1
@@ -37,7 +38,6 @@ public class CrackManager : MonoBehaviour
     private void Awake()
     {
         InitARDependency();
-        InitSOModules();
     }
 
     private void Update()
@@ -65,8 +65,8 @@ public class CrackManager : MonoBehaviour
         int picked = Random.Range(0, visibleList.Count);
         var selectedPlane = visibleList[picked];
 
-        //var createdCrack = Addressables.InstantiateAsync(_crackPlane, selectedPlane.center, selectedPlane.transform.rotation);
-        var createdCrack = Instantiate(_testPrefab, selectedPlane.center, selectedPlane.transform.rotation);
+        picked = Random.Range(0, _crackPrefabs.Length);
+        var createdCrack = Instantiate(_crackPrefabs[picked], selectedPlane.center, selectedPlane.transform.rotation);
         var selectedSize = Random.Range(_minimumCrackSize, _maximumCrackSize);
         createdCrack.transform.localScale = new Vector3(selectedSize, selectedSize, selectedSize);
         _arPlanesForDeploy.Remove(selectedPlane);
@@ -91,11 +91,6 @@ public class CrackManager : MonoBehaviour
         _arPlaneManager = FindObjectOfType<ARPlaneManager>();
 
         Debug.Assert(_arCamera != null && _arPlaneManager != null);
-    }
-
-    private void InitSOModules()
-    {
-
     }
 
     private void OnChangedARPlane(ARPlanesChangedEventArgs arg)
