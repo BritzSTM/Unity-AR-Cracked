@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 5112218244640375860, guid: b71945608b1a7464e847a7fb5e712878, type: 3}
-  m_DetectionMode: -1
+  m_DetectionMode: 2147483647
 --- !u!114 &16620137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 547300762}
   - component: {fileID: 547300761}
   - component: {fileID: 547300760}
+  - component: {fileID: 547300766}
   - component: {fileID: 547300759}
   - component: {fileID: 547300758}
   m_Layer: 0
@@ -823,6 +824,14 @@ Transform:
   m_Father: {fileID: 16620138}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &547300766
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547300756}
+  m_Enabled: 1
 --- !u!1 &572707257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,11 +1068,12 @@ MonoBehaviour:
   _autoStart: 1
   _onSpawnDimEventSO: {fileID: 11400000, guid: ff51324de326d4779b028024c8fba44e, type: 2}
   _onDestroyDimEventSO: {fileID: 11400000, guid: 6795acb7c92fe413fbf67cf8a18b6b20, type: 2}
+  _onCrackDeployFailedEventSO: {fileID: 11400000, guid: 2bf821b5f2d89a14e97febae46389323, type: 2}
   _onUpdateDimCountEventSO: {fileID: 11400000, guid: 19040e061a04685448668fa64e4ae9be, type: 2}
   _onUpdateMinedCountEventSO: {fileID: 11400000, guid: ee5f2fb2a6e97ba449c4df7fc3745250, type: 2}
   _onUpdateTimeEventSO: {fileID: 11400000, guid: 640d16a91cd135349b0f50438c9c630b, type: 2}
   _onGameoverEventSO: {fileID: 11400000, guid: 21bcc052dd6d0f844ac175ddac3f26b2, type: 2}
-  LimitDimCount: 30
+  LimitDimCount: 16
   LimitDimWarningRate: 0.8
 --- !u!4 &746053120
 Transform:
@@ -2915,6 +2925,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _onNormalModeSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 49ceb438017334f9a9acbd250932f29f, type: 2}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _onSearchModeSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 99692bb36e2454da7a71d5509d1b13e6, type: 2}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
       propertyPath: _maximumCrackSize
       value: 0.07
       objectReference: {fileID: 0}
@@ -2931,6 +2949,22 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _onCrackDeployMode
+      value: 
+      objectReference: {fileID: 11400000, guid: 476e790bab9636040817deb5da9f753b, type: 2}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _onCrackDeployFailed
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bf821b5f2d89a14e97febae46389323, type: 2}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _onCrackUndeployMode
+      value: 
+      objectReference: {fileID: 11400000, guid: e2a9eeeb6830bf24bafff1ffdb1b08b0, type: 2}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _distanceBetweenCrack
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
       propertyPath: _crackPlane.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2938,6 +2972,22 @@ PrefabInstance:
       propertyPath: _crackPlane.m_AssetGUID
       value: 2f0bb8de3ac479548b09958715c65f80
       objectReference: {fileID: 0}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _crackPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _crackPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 2172076061346117155, guid: 2f0bb8de3ac479548b09958715c65f80, type: 3}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _crackPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 2172076061346117155, guid: 035727495d2072a41a00a8e3d0460d31, type: 3}
+    - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
+      propertyPath: _crackPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2172076061346117155, guid: 035727495d2072a41a00a8e3d0460d31, type: 3}
     - target: {fileID: 7343543746737434341, guid: 46b08da86f1d752408b95c60395a977a, type: 3}
       propertyPath: _crackPlane.Array.data[0].m_AssetGUID
       value: 127833104e117bf459222f40c1116782

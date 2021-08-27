@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnBrustTimeEventSO: {fileID: 11400000, guid: 07fdeb33d88135a419d1bb40bdabd191, type: 2}
   OnUnbrustTimeEventSO: {fileID: 11400000, guid: a1a1fea9cd68faa48afc653298cb56e2, type: 2}
-  MinBurstTime: 1
-  MaxBurstTime: 10
-  BurstDurationTime: 20
+  MinBurstTime: 10
+  MaxBurstTime: 15
+  BurstDurationTime: 8
   EmissionTimeSO: {fileID: 11400000, guid: a7224e006922a764f8cadbb7b0993417, type: 2}

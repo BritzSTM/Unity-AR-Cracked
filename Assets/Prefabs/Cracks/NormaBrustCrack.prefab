@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2172076061346117164}
   - component: {fileID: 1466518699795580392}
   m_Layer: 0
-  m_Name: Crack
+  m_Name: NormaBrustCrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,10 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trackingRequestEventSO: {fileID: 11400000, guid: 718a35b957837e54099d02aad88c2758, type: 2}
   _untrackingRequestEventSO: {fileID: 11400000, guid: d0cb4e7bd7ecce645ae8f5d8c65f456f, type: 2}
-  _OnBurstEventSO: {fileID: 0}
-  _OnUnburstEventSO: {fileID: 0}
   _deciderSOs:
   - {fileID: 11400000, guid: fb309be96299823409ba857c777ae9e9, type: 2}
+  - {fileID: 11400000, guid: c35dd3312d776c341b8c1b5e640616ea, type: 2}
   _dimObjects:
   - {fileID: 4252713028821736762, guid: fd080c91736e5cd43a41106c96a37e27, type: 3}
   - {fileID: 8124900181079579496, guid: 127833104e117bf459222f40c1116782, type: 3}
@@ -137,11 +136,7 @@ MonoBehaviour:
   - {fileID: 1944632367240649368, guid: 9d4fddbed297e4ee393c939a195da30c, type: 3}
   - {fileID: 7085612134581990034, guid: 29621ca061df3419791575cab51ffdd3, type: 3}
   - {fileID: 3752362217107650037, guid: c9934510ef0734c03b2083c74ec34675, type: 3}
-  BurstablePT: 0.35
-  MinBurstTime: 4.5
-  MaxBurstTime: 7
-  BurstEmissionForce: 4
-  EmissionForce: 10
+  EmissionForce: 20
 --- !u!1 &4315593312651376637
 GameObject:
   m_ObjectHideFlags: 0

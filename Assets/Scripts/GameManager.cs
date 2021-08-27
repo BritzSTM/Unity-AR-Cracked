@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Recive events")]
     [SerializeField] private EventTypeDim _onSpawnDimEventSO;
     [SerializeField] private EventTypeDim _onDestroyDimEventSO;
+    [SerializeField] private EventTypeCrackManager _onCrackDeployFailedEventSO;
 
     [Header("Raise events")]
     [SerializeField] private EventTypeGameManager _onUpdateDimCountEventSO;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public float PlayTime { get; private set; }
     private float _startPlayTime;
     private bool _isPlay;
+    private bool _crackDeployFailed;
 
     [Header("GameRule")]
     public int LimitDimCount = 5;
@@ -44,12 +46,14 @@ public class GameManager : MonoBehaviour
     {
         _onSpawnDimEventSO.OnEvent += OnSpawnDimEvent;
         _onDestroyDimEventSO.OnEvent += OnDestroyDimEvent;
+        _onCrackDeployFailedEventSO.OnEvent += OnCrackDeployFailedEvent;
     }
 
     private void OnDisable()
     {
         _onSpawnDimEventSO.OnEvent -= OnSpawnDimEvent;
         _onDestroyDimEventSO.OnEvent -= OnDestroyDimEvent;
+        _onCrackDeployFailedEventSO.OnEvent -= OnCrackDeployFailedEvent;
     }
 
     private void Start()
@@ -71,7 +75,7 @@ public class GameManager : MonoBehaviour
         if (!_isPlay)
             return;
 
-        if (CurrentDimCount > LimitDimCount)
+        if (CurrentDimCount > LimitDimCount || _crackDeployFailed)
         {
             _isPlay = false;
             _onGameoverEventSO.RaiseEvent(this);
@@ -93,6 +97,8 @@ public class GameManager : MonoBehaviour
         _onUpdateMinedCountEventSO.RaiseEvent(this);
     }
 
+    private void OnCrackDeployFailedEvent(CrackManager manager) => _crackDeployFailed = true;
+
     public void Play()
     {
         _isPlay = true;
@@ -101,7 +107,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdatePlayTime()
     {
-        PlayTime += Time.time - _startPlayTime;
+        PlayTime += Time.deltaTime;
         _onUpdateTimeEventSO.RaiseEvent(this);
     }
 }
