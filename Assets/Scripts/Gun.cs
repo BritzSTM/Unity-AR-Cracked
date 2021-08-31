@@ -7,28 +7,29 @@ using UnityEngine.AddressableAssets;
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] private GameObject _cam;
-    [SerializeField] private GameObject _aimPivot;
+    [SerializeField] private Image _buttonImg;
 
     [SerializeField] private Color _color;
     [SerializeField] private int _damage = 1;
-    [SerializeField] private Image _buttonImg;
-    [SerializeField] private VisualEffect _gunEffect;
-    [SerializeField] private AudioClip[] _gunSoundEffects;
-
-    [SerializeField] bool _useOld = false;
-    [SerializeField] private ParticleSystem _ps;
 
     [Header("EventSO")]
     [SerializeField] private EventTypeVoid _FireTriggerEventSO;
 
+    [Header("FXs")]
+    [SerializeField] bool _useOld = false;
+    [SerializeField] private ParticleSystem _ps;
+    [SerializeField] private VisualEffect _gunEffect;
+    [SerializeField] private AudioClip[] _gunSoundEffects;
+
+    private Transform _tr;
     private AudioSource _audio;
+    private RaycastHit _raycastHit = new RaycastHit();
+
     private void Awake()
     {
         _buttonImg.color = _color;
-        transform.rotation = Quaternion.LookRotation(
-            _aimPivot.transform.position - transform.position);
-
+        
+        _tr = GetComponent<Transform>();
         _audio = GetComponent<AudioSource>();
     }
 
@@ -46,19 +47,20 @@ public class Gun : MonoBehaviour
 
     public void Fire()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(_cam.transform.position, _cam.transform.forward, out hit))
-        {
-            if (hit.transform.tag == "Unit")
-            {
-                var target = hit.transform.GetComponent<IDamageable>();
-                if (target != null)
-                    ToDamage(target);
-            }
-        }
+        //if (Physics.Raycast(_cam.transform.position, _cam.transform.forward, out hit))
+        //{
+        //    if (hit.transform.tag == "Unit")
+        //    {
+        //        var target = hit.transform.GetComponent<IDamageable>();
+        //        if (target != null)
+        //            ToDamage(target);
+        //    }
+        //}
 
         PlayEffects();
     }
+
+    public void Aim(Vector3 pos) => transform.rotation = Quaternion.LookRotation(pos - _tr.position);
 
     private void PlayEffects()
     {
