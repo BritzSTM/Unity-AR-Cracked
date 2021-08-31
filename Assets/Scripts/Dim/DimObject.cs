@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
@@ -13,13 +11,17 @@ public class DimObject : MonoBehaviour, IDamageable
     [Header("RaiseEvents")]
     [SerializeField] private EventTypeGameObject _trackingRequestEventSO;
     [SerializeField] private EventTypeGameObject _untrackingRequestEventSO;
-    [SerializeField] private EventTypeDim _OnSpawnDimEventSO;
-    [SerializeField] private EventTypeDim _OnDestroyDimEventSO;
+    [SerializeField] private EventTypeDim _onSpawnDimEventSO;
+    [SerializeField] private EventTypeDim _onDestroyDimEventSO;
+    [SerializeField] private EventTypeAudioClip _playEffectSoundSO;
 
     [Header("Matrial")]
     [SerializeField] private Material[] _materials;
     [SerializeField] private bool _IsPlayDeployAnime = true;
     [SerializeField] private float _targetDeployAnimeTime = 1.0f;
+
+    [Header("SoundEffectFX")]
+    [SerializeField] private AudioClip[] _brokenEffects;
 
     private float _playDeployAnimeTime;
     private float _lastPlayRate;
@@ -38,13 +40,13 @@ public class DimObject : MonoBehaviour, IDamageable
         _playDeployAnimeTime = 0.0f;
         _lastPlayRate = 0.0f;
 
-        _OnSpawnDimEventSO.RaiseEvent(this);
+        _onSpawnDimEventSO.RaiseEvent(this);
     }
 
     private void OnDisable()
     {
         _untrackingRequestEventSO.RaiseEvent(gameObject);
-        _OnDestroyDimEventSO.RaiseEvent(this);
+        _onDestroyDimEventSO.RaiseEvent(this);
     }
 
     private void Start()
@@ -75,8 +77,11 @@ public class DimObject : MonoBehaviour, IDamageable
         if (_lastPlayRate < 1.0f)
             return;
 
-        if(type.color == CurrentColor)
+        if (type.color == CurrentColor)
+        {
+            PlayDestroySoundFXRandomly();
             Destroy(gameObject);
+        }
     }
 
     private void AnimeDepoly()
@@ -94,5 +99,23 @@ public class DimObject : MonoBehaviour, IDamageable
         }
         else
             _meshRenderer.SetPropertyBlock(null);
+    }
+
+    private void PlayDestroySoundFXRandomly()
+    {
+        if(_brokenEffects.Length == 0)
+        {
+            Debug.LogWarning($"[{nameof(DimObject)}] Broken sound effect fx empty");
+            return;
+        }
+
+        if(_playEffectSoundSO == null)
+        {
+            Debug.LogWarning($"[{nameof(DimObject)}] effect sound play so null");
+            return;
+        }
+
+        int picked = Random.Range(0, _brokenEffects.Length);
+        _playEffectSoundSO.RaiseEvent(_brokenEffects[picked]);
     }
 }
