@@ -150,10 +150,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: b0abcb97df5e34659acdb659c727c02c, type: 2}
   _IsPlayDeployAnime: 1
   _targetDeployAnimeTime: 3
-  _brokenEffects:
+  _brokenSoundEffects:
   - {fileID: 8300000, guid: 25b5b581127384135b8775d311f69faf, type: 3}
   - {fileID: 8300000, guid: ab36387501bb84533a84b1ff912adfed, type: 3}
   - {fileID: 8300000, guid: b60d53414ba174a0fa569e17a9ed819f, type: 3}
   - {fileID: 8300000, guid: de0dc6bec0b3c4b3987079ff249d97be, type: 3}
   - {fileID: 8300000, guid: 9c9189b397e4044df84f2ee119f1212c, type: 3}
   - {fileID: 8300000, guid: 2ce52a133b6e645c699e4c085da499e4, type: 3}
+  _brokenVisualEffectPrefab: {fileID: 8857034292014972978, guid: df3815f91fea74b4aade63742a1a0fe3, type: 3}
