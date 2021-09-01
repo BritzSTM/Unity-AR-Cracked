@@ -27,8 +27,9 @@ public class GameManager : MonoBehaviour
     private bool _crackDeployFailed;
 
     [Header("GameRule")]
-    public int LimitDimCount = 5;
+    public int LimitDimCount = 16;
     public float LimitDimWarningRate = 0.8f;
+    public int TrackingGunCost = 15;
 
     public static GameManager Instance = null;
     private void Awake()
@@ -109,5 +110,14 @@ public class GameManager : MonoBehaviour
     {
         PlayTime += Time.deltaTime;
         _onUpdateTimeEventSO.RaiseEvent(this);
+    }
+
+    private bool UseTrackingGun()
+    {
+        if (MinedDimCount < TrackingGunCost)
+            return false;
+
+        MinedDimCount -= TrackingGunCost;
+        return true;
     }
 }
