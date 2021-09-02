@@ -4,6 +4,8 @@ public class Gun : MonoBehaviour
 {
     [Header("Gun type desc")]
     [SerializeField] private Color _color;
+    public Color CurrentColor { get => _color; }
+
     [SerializeField] private int _damage = 1;
 
     [Header("Raise Events")]

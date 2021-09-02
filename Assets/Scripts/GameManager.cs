@@ -19,7 +19,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EventTypeGameManager _onGameoverEventSO;   
 
     public int MinedDimCount { get; private set; }
+    private bool _dirtyMinedDimCount;
+
     public int CurrentDimCount { get; private set; }
+    private bool _dirtyCurrentDimCount;
 
     public float PlayTime { get; private set; }
     private float _startPlayTime;
@@ -29,7 +32,7 @@ public class GameManager : MonoBehaviour
     [Header("GameRule")]
     public int LimitDimCount = 16;
     public float LimitDimWarningRate = 0.8f;
-    public int TrackingGunCost = 15;
+    public int MultiMineGunCost = 30;
 
     public static GameManager Instance = null;
     private void Awake()
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
             return;
 
         UpdatePlayTime();
+        UpdateCounts();
     }
 
     private void Update()
@@ -86,7 +90,7 @@ public class GameManager : MonoBehaviour
     private void OnSpawnDimEvent(DimObject dim)
     {
         ++CurrentDimCount;
-        _onUpdateDimCountEventSO.RaiseEvent(this);
+        _dirtyCurrentDimCount = true;
     }
 
     private void OnDestroyDimEvent(DimObject dim)
@@ -94,8 +98,8 @@ public class GameManager : MonoBehaviour
         --CurrentDimCount;
         ++MinedDimCount;
 
-        _onUpdateDimCountEventSO.RaiseEvent(this);
-        _onUpdateMinedCountEventSO.RaiseEvent(this);
+        _dirtyMinedDimCount = true;
+        _dirtyCurrentDimCount = true;
     }
 
     private void OnCrackDeployFailedEvent(CrackManager manager) => _crackDeployFailed = true;
@@ -112,12 +116,29 @@ public class GameManager : MonoBehaviour
         _onUpdateTimeEventSO.RaiseEvent(this);
     }
 
-    private bool UseTrackingGun()
+    private void UpdateCounts()
     {
-        if (MinedDimCount < TrackingGunCost)
+        if(_dirtyMinedDimCount)
+        {
+            _onUpdateDimCountEventSO.RaiseEvent(this);
+            _onUpdateMinedCountEventSO.RaiseEvent(this);
+        }
+
+        if(!_dirtyMinedDimCount && _dirtyCurrentDimCount)
+            _onUpdateDimCountEventSO.RaiseEvent(this);
+
+        _dirtyMinedDimCount = false;
+        _dirtyCurrentDimCount = false;
+    }
+
+    public bool UseTrackingGun()
+    {
+        if (MinedDimCount < MultiMineGunCost)
             return false;
 
-        MinedDimCount -= TrackingGunCost;
+        MinedDimCount -= MultiMineGunCost;
+        _dirtyMinedDimCount = true;
+
         return true;
     }
 }

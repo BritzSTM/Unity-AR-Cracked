@@ -51,12 +51,6 @@ public class DimObject : MonoBehaviour, IDamageable
         _onSpawnDimEventSO.RaiseEvent(this);
     }
 
-    private void OnDisable()
-    {
-        _untrackingRequestEventSO.RaiseEvent(gameObject);
-        _onDestroyDimEventSO.RaiseEvent(this);
-    }
-
     private void Start()
     {
         _trackingRequestEventSO.RaiseEvent(gameObject);
@@ -89,6 +83,9 @@ public class DimObject : MonoBehaviour, IDamageable
         {
             PlayDestroyVisualFX();
             PlayDestroySoundFXRandomly();
+
+            _untrackingRequestEventSO.RaiseEvent(gameObject);
+            _onDestroyDimEventSO.RaiseEvent(this);
 
             Destroy(gameObject, _destroyDelay);
         }

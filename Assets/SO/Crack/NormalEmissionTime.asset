@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NormalEmissionTime
   m_EditorClassIdentifier: 
   MinSpawnTime: 3
-  MaxSpawnTime: 6
+  MaxSpawnTime: 5
