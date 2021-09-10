@@ -101,7 +101,7 @@ MonoBehaviour:
   _searchModeEventSO: {fileID: 11400000, guid: 99692bb36e2454da7a71d5509d1b13e6, type: 2}
   _pivotCamera: {fileID: 0}
   _simbolPrefab: {fileID: 1775492546087517278, guid: cac0cd9bde8bd6c448471562bd1a7e0a, type: 3}
-  _initPoolSize: 20
+  _initPoolSize: 1500
 --- !u!114 &663785487693753592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,5 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventSO: {fileID: 11400000, guid: 21bcc052dd6d0f844ac175ddac3f26b2, type: 2}
+  _targetState: 0
   targets:
   - {fileID: 2066585003903660979}

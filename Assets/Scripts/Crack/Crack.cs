@@ -73,22 +73,13 @@ public class Crack : MonoBehaviour
     {
         int pickedDIm = Random.Range(0, _dimObjects.Length);
         var createdDim = Instantiate(_dimObjects[pickedDIm], _tr.position, Quaternion.identity);
+
+        Vector3 emissionDir = (Random.insideUnitSphere + _tr.up).normalized;
         var rbody = createdDim.GetComponent<Rigidbody>();
-
-        // 발사할 각도 조정
-        float half = _tr.eulerAngles.x / 2.0f;
-        _cahcedVector3[0].x = Random.Range(-half, half);
-        _cahcedVector3[0].y = _tr.eulerAngles.y;
-        half = _tr.eulerAngles.z / 2.0f;
-        _cahcedVector3[0].z = Random.Range(-half, half);
-
-        var prevRot = _tr.rotation;
-        _tr.rotation = Quaternion.LookRotation(_cahcedVector3[0]);
-        rbody.AddForce(_tr.forward * EmissionForce);
-        _tr.rotation = prevRot;
+        rbody.AddForce(emissionDir * EmissionForce);
     }
 
-    private void UpdateDeciders()
+    private void UpdateDeciders()   
     {
         for(int i = 0; i < _deciders.Length; ++i)
         {

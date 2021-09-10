@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 09403c3320278534297442f0483aacbb
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/LowGame.unity
+    guid: bae077a55664944129598d4bb1965c08
+  - enabled: 1
+    path: Assets/Scenes/MiddleGame.unity
+    guid: 2710eff2dd9f54a33b5807733af687ed
+  - enabled: 1
+    path: Assets/Scenes/HighGame.unity
+    guid: fdb4f3a5dbc8a4f51adbc843851e3818
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a1af3cd881fdb664098498473ada77ea, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 128114cb5282abe4997c776575ac33ab, type: 2}

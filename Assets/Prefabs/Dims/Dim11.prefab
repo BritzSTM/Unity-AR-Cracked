@@ -128,10 +128,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trackingRequestEventSO: {fileID: 11400000, guid: 718a35b957837e54099d02aad88c2758, type: 2}
   _untrackingRequestEventSO: {fileID: 11400000, guid: d0cb4e7bd7ecce645ae8f5d8c65f456f, type: 2}
-  _OnSpawnDimEventSO: {fileID: 11400000, guid: ff51324de326d4779b028024c8fba44e, type: 2}
-  _OnDestroyDimEventSO: {fileID: 11400000, guid: 6795acb7c92fe413fbf67cf8a18b6b20, type: 2}
+  _onSpawnDimEventSO: {fileID: 11400000, guid: ff51324de326d4779b028024c8fba44e, type: 2}
+  _onDestroyDimEventSO: {fileID: 11400000, guid: 6795acb7c92fe413fbf67cf8a18b6b20, type: 2}
+  _playEffectSoundSO: {fileID: 11400000, guid: 63dddd5ea8152477eaa596d10b4a3f7b, type: 2}
   _materials:
   - {fileID: 2100000, guid: 292626fb77c518440bb2335bccea6a34, type: 2}
   - {fileID: 2100000, guid: b0abcb97df5e34659acdb659c727c02c, type: 2}
   _IsPlayDeployAnime: 1
   _targetDeployAnimeTime: 3
+  _brokenSoundEffects:
+  - {fileID: 8300000, guid: 25b5b581127384135b8775d311f69faf, type: 3}
+  - {fileID: 8300000, guid: ab36387501bb84533a84b1ff912adfed, type: 3}
+  - {fileID: 8300000, guid: b60d53414ba174a0fa569e17a9ed819f, type: 3}
+  - {fileID: 8300000, guid: de0dc6bec0b3c4b3987079ff249d97be, type: 3}
+  - {fileID: 8300000, guid: 9c9189b397e4044df84f2ee119f1212c, type: 3}
+  - {fileID: 8300000, guid: 2ce52a133b6e645c699e4c085da499e4, type: 3}
+  _brokenVisualEffectPrefab: {fileID: 8857034292014972978, guid: df3815f91fea74b4aade63742a1a0fe3, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438698dd3e615014ab8e93f7c43d7d84, type: 3}
   m_Name: NoramBrustEmissionTime
   m_EditorClassIdentifier: 
-  MinSpawnTime: 1
-  MaxSpawnTime: 2
+  MinSpawnTime: 0.6
+  MaxSpawnTime: 1

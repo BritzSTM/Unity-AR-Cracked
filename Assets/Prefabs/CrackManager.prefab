@@ -43,5 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31c37a81354978418174523a86eea8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
-  _arPlaneManager: {fileID: 0}
+  _onCrackDeployMode: {fileID: 11400000, guid: 476e790bab9636040817deb5da9f753b, type: 2}
+  _onCrackUndeployMode: {fileID: 11400000, guid: e2a9eeeb6830bf24bafff1ffdb1b08b0, type: 2}
+  _onCrackDeployFailed: {fileID: 11400000, guid: 2bf821b5f2d89a14e97febae46389323, type: 2}
+  _onNormalModeSO: {fileID: 11400000, guid: 49ceb438017334f9a9acbd250932f29f, type: 2}
+  _onSearchModeSO: {fileID: 11400000, guid: 99692bb36e2454da7a71d5509d1b13e6, type: 2}
+  _crackPrefabs:
+  - {fileID: 2172076061346117155, guid: 2f0bb8de3ac479548b09958715c65f80, type: 3}
+  - {fileID: 2172076061346117155, guid: 035727495d2072a41a00a8e3d0460d31, type: 3}
+  - {fileID: 2172076061346117155, guid: 035727495d2072a41a00a8e3d0460d31, type: 3}
+  _distanceBetweenCrack: 1.5
+  _minimumPlaneSizeForDeploy: {x: 0.1, y: 0.1}
+  _minimumCrackSize: 0.07
+  _maximumCrackSize: 0.07
+  _minimumDeployTime: 15
+  _maximumDeployTime: 20
+  _limitDeployTime: 20

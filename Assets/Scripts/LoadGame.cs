@@ -5,8 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LoadGame : MonoBehaviour
 {
-    public void Load()
+    public void LoadLow()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void LoadMiddle()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void LoadHigh()
+    {
+        SceneManager.LoadScene(3);
     }
 }

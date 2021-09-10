@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547308576181078196}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -59,5 +59,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127f09d2a68bef647919d88c0c92e6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _normalModeEventSO: {fileID: 11400000, guid: 49ceb438017334f9a9acbd250932f29f, type: 2}
+  _searchModeEventSO: {fileID: 11400000, guid: 99692bb36e2454da7a71d5509d1b13e6, type: 2}
+  _onSpawnDimEventSO: {fileID: 11400000, guid: ff51324de326d4779b028024c8fba44e, type: 2}
+  _onDestroyDimEventSO: {fileID: 11400000, guid: 6795acb7c92fe413fbf67cf8a18b6b20, type: 2}
   _leftGunFireSO: {fileID: 11400000, guid: 53d6a4297bcfd7b489c05685d2052c1d, type: 2}
-  _RightGunFireSO: {fileID: 11400000, guid: bb2c083fa89b3244ebeb70767240fc41, type: 2}
+  _rightGunFireSO: {fileID: 11400000, guid: bb2c083fa89b3244ebeb70767240fc41, type: 2}
+  _forbiddenAttackBySearchMode: 1
+  _camera: {fileID: 0}
+  _aimPivot: {fileID: 0}
+  _leftGuns:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _rightGuns:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
