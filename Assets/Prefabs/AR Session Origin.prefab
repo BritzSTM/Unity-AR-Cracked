@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 1, y: 0}
+  _targetPos: {x: 0, y: 0}
 --- !u!114 &3884905252272024645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 0, y: 0}
+  _targetPos: {x: 1, y: 0}
 --- !u!114 &1849946828552477020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 1, y: 0}
+  _targetPos: {x: 0, y: 0}
 --- !u!114 &6826897039487745088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 1, y: 0}
+  _targetPos: {x: 0, y: 0}
 --- !u!114 &364814044635625539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 1, y: 0}
+  _targetPos: {x: 0, y: 0}
 --- !u!114 &4815848045838785901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 0, y: 0}
+  _targetPos: {x: 1, y: 0}
 --- !u!114 &7474229945141486759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 1, y: 0}
+  _targetPos: {x: 0, y: 0}
 --- !u!114 &2414254927869316466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 1, y: 0}
+  _targetPos: {x: 0, y: 0}
 --- !u!114 &4058556836277630035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 0, y: 0}
+  _targetPos: {x: 1, y: 0}
 --- !u!114 &5836310577940228217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 0, y: 0}
+  _targetPos: {x: 1, y: 0}
 --- !u!114 &6448071568238493232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 0, y: 0}
+  _targetPos: {x: 1, y: 0}
 --- !u!1 &6837485821203499035
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 1, y: 0}
+  _targetPos: {x: 0, y: 0}
 --- !u!1 &8791548375704098185
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 0, y: 0}
+  _targetPos: {x: 1, y: 0}
 --- !u!114 &5318187331442708228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivotCam: {fileID: 6837485821826275323}
-  _targetPos: {x: 0, y: 0}
+  _targetPos: {x: 1, y: 0}
 --- !u!114 &2254414877459640638
 MonoBehaviour:
   m_ObjectHideFlags: 0

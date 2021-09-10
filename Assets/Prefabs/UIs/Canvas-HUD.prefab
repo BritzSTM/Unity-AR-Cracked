@@ -61,10 +61,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2753023937574999015}
-  - {fileID: 1343565348158401546}
   - {fileID: 8814615101130143533}
-  - {fileID: 4150512556901456510}
   - {fileID: 5069021013278189380}
+  - {fileID: 1343565348158401546}
+  - {fileID: 4150512556901456510}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -204,7 +204,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5069021012872450132}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -260,6 +260,18 @@ PrefabInstance:
       propertyPath: m_EffectDistance.x
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: bb2c083fa89b3244ebeb70767240fc41, type: 2}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RaiseEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EventTypeVoid, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2892681572565719895, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -282,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208604276910139808, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5208604276910139808, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_AnchorMax.x
@@ -395,6 +407,14 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FireLeftTrackingGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GunFireManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3675890717653327533, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -409,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208604276910139808, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5208604276910139808, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_AnchorMax.x
@@ -521,6 +541,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5069021012872450132}
     m_Modifications:
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 53d6a4297bcfd7b489c05685d2052c1d, type: 2}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RaiseEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EventTypeVoid, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5208604276910139808, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -652,6 +684,14 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FireRightTrackingGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892681572565719894, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GunFireManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2892681572565719895, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -678,7 +718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208604276910139808, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5208604276910139808, guid: caaba52f8eb0746bc82f98c16b2ce577, type: 3}
       propertyPath: m_AnchorMax.x
